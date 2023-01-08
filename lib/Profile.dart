@@ -1,5 +1,8 @@
+import 'dart:io';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:app_it/main.dart';
+import 'package:app_it/Tentang.dart';
 import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -12,14 +15,7 @@ final Uri aksesAnggota = Uri.parse(
     'https://armoviefilm.000webhostapp.com/akses_anggota/akses_anggota.html');
 final Uri Admin = Uri.parse('https://portofolio-3c1ab.web.app/');
 
-class Profile extends StatelessWidget {
-  //constructor
-  Profile({required this.title, required this.desc});
-
-  //properti
-  String title;
-  String desc;
-
+class ProfileIt extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     _mailto() async {
@@ -39,7 +35,7 @@ class Profile extends StatelessWidget {
         margin: EdgeInsets.only(left: 20, top: 30),
         width: 907,
         height: 900,
-        decoration: BoxDecoration(),
+
         child: Stack(children: <Widget>[
           Positioned(
               top: 60,
@@ -82,7 +78,7 @@ class Profile extends StatelessWidget {
                 ],
                 color: Color.fromRGBO(255, 255, 255, 1),
               ),
-              child: Stack(children: <Widget>[
+              child: Stack(children: [
                 Positioned(
                     left: 50,
                     child: Image.asset(
@@ -106,45 +102,48 @@ class Profile extends StatelessWidget {
                       'SMKS TERPADU IBADURRAHMAN',
                       style: TextStyle(fontSize: 16),
                     )),
+                // element medsos
                 Positioned(
-                  top: 280,
-                  left: 80,
-                  child: Row(
-                    children: <Widget>[
-                      Positioned(
-                          child: Link(
-                              target: LinkTarget.blank,
-                              uri: instagram,
-                              builder: (context, Ig) => IconButton(
-                                    icon: Image.asset('assets/image/Ig.png'),
-                                    iconSize: 62,
-                                    onPressed: Ig,
-                                  ))),
-                      Positioned(
-                          child: Link(
-                              target: LinkTarget.blank,
-                              uri: tiktok,
-                              builder: (context, Tt) => IconButton(
-                                    iconSize: 35,
-                                    icon: Image.asset(
-                                      'assets/image/TT.png',
-                                    ),
-                                    onPressed: Tt,
-                                  ))),
-                      Positioned(
-                          child: Link(
-                              target: LinkTarget.blank,
-                              uri: youtube,
-                              builder: (context, Yt) => IconButton(
-                                    iconSize: 62,
-                                    icon: Image.asset(
-                                      'assets/image/Yt.png',
-                                    ),
-                                    onPressed: Yt,
-                                  ))),
-                    ],
-                  ),
-                ),
+                    top: 300,
+                    left: 110,
+                    child: Container(
+                        width: 150,
+                        child: Row(
+                          children: <Widget>[
+                            Expanded(
+                                child: Link(
+                                    uri: instagram,
+                                    builder: (context, Ig) => InkWell(
+                                          child: Container(
+                                            child: Image.asset(
+                                                'assets/image/Ig.png'),
+                                          ),
+                                          onTap: Ig,
+                                        ))),
+                            Expanded(
+                                child: Link(
+                                    uri: tiktok,
+                                    builder: (context, Tt) => (InkWell(
+                                          child: Container(
+                                            child: Image.asset(
+                                              'assets/image/TT.png',
+                                            ),
+                                          ),
+                                          onTap: Tt,
+                                        )))),
+                            Expanded(
+                                child: Link(
+                                    target: LinkTarget.blank,
+                                    uri: youtube,
+                                    builder: (context, Yt) => InkWell(
+                                          child: Container(
+                                            child: Image.asset(
+                                                'assets/image/Yt.png'),
+                                          ),
+                                          onTap: Yt,
+                                        )))
+                          ],
+                        )))
               ]),
             ),
           ),
@@ -153,6 +152,7 @@ class Profile extends StatelessWidget {
               top: 590,
               left: 12,
               child: Link(
+                  target: LinkTarget.blank,
                   uri: aksesAnggota,
                   builder: (context, AksesAnggota) => InkWell(
                         child: Container(
@@ -188,30 +188,36 @@ class Profile extends StatelessWidget {
           Positioned(
               top: 670,
               left: 12,
-              child: Container(
-                width: 334,
-                height: 66,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(16),
-                    topRight: Radius.circular(16),
-                    bottomLeft: Radius.circular(16),
-                    bottomRight: Radius.circular(16),
+              child: InkWell(
+                child: Container(
+                  width: 334,
+                  height: 66,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(16),
+                      topRight: Radius.circular(16),
+                      bottomLeft: Radius.circular(16),
+                      bottomRight: Radius.circular(16),
+                    ),
+                    color: Color.fromARGB(255, 255, 255, 255),
+                    border: Border.all(
+                      color: Color.fromRGBO(218, 218, 218, 1),
+                    ),
                   ),
-                  color: Color.fromARGB(255, 255, 255, 255),
-                  border: Border.all(
-                    color: Color.fromRGBO(218, 218, 218, 1),
-                  ),
+                  child: Stack(children: <Widget>[
+                    Positioned(
+                        top: 25,
+                        left: 120,
+                        child: Text(
+                          'Tentang IT Club',
+                          style: TextStyle(fontSize: 16),
+                        )),
+                  ]),
                 ),
-                child: Stack(children: <Widget>[
-                  Positioned(
-                      top: 25,
-                      left: 120,
-                      child: Text(
-                        'Tentang IT Club',
-                        style: TextStyle(fontSize: 16),
-                      )),
-                ]),
+                onTap: () => {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Tentangit()))
+                },
               )),
           // akhir tentang
           // daftar bantuan

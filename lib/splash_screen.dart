@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:app_it/main.dart';
 import 'package:lottie/lottie.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -13,7 +14,6 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen>
     with TickerProviderStateMixin {
   late final AnimationController _controller;
-  // video controller
   @override
   void initState() {
     super.initState();
@@ -29,6 +29,7 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   Widget build(BuildContext context) {
+    final maxLines = 1;
     return Scaffold(
       body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
         Lottie.network(
@@ -41,15 +42,18 @@ class _SplashScreenState extends State<SplashScreen>
                   MaterialPageRoute(builder: (context) => MyHomePage()));
             });
         }),
-        Center(
-          child: (Text(
-            'Welcome IT Club Lovers',
-            style: TextStyle(
-                fontFamily: 'Valken',
-                color: Color.fromRGBO(35, 225, 189, 1),
-                fontSize: 30),
-          )),
-        )
+        Container(
+            width: MediaQuery.of(context).size.width,
+            child: Center(
+              child: AutoSizeText(
+                'Welcome IT Club Lovers',
+                style: TextStyle(
+                    fontFamily: 'Valken',
+                    color: Color.fromRGBO(35, 225, 189, 1),
+                    fontSize: 30),
+                maxLines: maxLines,
+              ),
+            ))
       ]),
     );
   }
