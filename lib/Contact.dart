@@ -100,349 +100,330 @@ class Contact extends StatelessWidget {
             margin: EdgeInsets.only(top: 250, left: 20),
             child: Stack(
               children: <Widget>[
-                Expanded(
-                    child: Link(
-                        target: LinkTarget.blank,
-                        uri: ibufitri,
-                        builder: (context, IbuFitri) => InkWell(
-                              child: Container(
-                                  width: 375,
-                                  height: 75,
-                                  decoration: BoxDecoration(),
-                                  child: Stack(children: <Widget>[
-                                    Container(
-                                        width: 326,
+                Link(
+                    target: LinkTarget.blank,
+                    uri: ibufitri,
+                    builder: (context, IbuFitri) => InkWell(
+                          child: Container(
+                              width: 375,
+                              height: 75,
+                              decoration: BoxDecoration(),
+                              child: Stack(children: <Widget>[
+                                Container(
+                                    width: 326,
+                                    height: 55,
+                                    decoration: BoxDecoration(),
+                                    child: Stack(children: <Widget>[
+                                      Positioned(
+                                          top: 0,
+                                          left: 0,
+                                          child: Container(
+                                              width: 55,
+                                              height: 55,
+                                              decoration: BoxDecoration(
+                                                image: DecorationImage(
+                                                    image: NetworkImage(
+                                                        'https://pps.whatsapp.net/v/t61.24694-24/321172830_499560462245015_140409785024768514_n.jpg?ccb=11-4&oh=01_AdQ__cwfHm5yuVnDZQUwQWzp9MB3R02wokrh4vDpUFUA4g&oe=63C7EC0A')),
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.elliptical(55, 55)),
+                                              ))),
+                                      Positioned(
+                                          top: 12,
+                                          left: 68,
+                                          child: Text(
+                                            'Bu Fitri',
+                                            textAlign: TextAlign.left,
+                                            style: TextStyle(
+                                                color:
+                                                    Color.fromRGBO(0, 0, 0, 1),
+                                                fontFamily: 'Arial',
+                                                fontSize: 12,
+                                                letterSpacing:
+                                                    0 /*percentages not used in flutter. defaulting to zero*/,
+                                                fontWeight: FontWeight.normal,
+                                                height: 1),
+                                          )),
+                                      Positioned(
+                                          top: 27,
+                                          left: 68,
+                                          child: Text(
+                                            'Pembina',
+                                            textAlign: TextAlign.left,
+                                            style: TextStyle(
+                                                color: Color.fromRGBO(
+                                                    120, 113, 113, 1),
+                                                fontFamily: 'Arial',
+                                                fontSize: 12,
+                                                letterSpacing:
+                                                    0 /*percentages not used in flutter. defaulting to zero*/,
+                                                fontWeight: FontWeight.normal,
+                                                height: 1),
+                                          )),
+                                      Positioned(
+                                          top: 20,
+                                          left: 267,
+                                          child: Text(
+                                            'WhatsApp',
+                                            textAlign: TextAlign.left,
+                                            style: TextStyle(
+                                                color: Color.fromRGBO(
+                                                    115, 108, 108, 1),
+                                                fontFamily: 'Inter',
+                                                fontSize: 12,
+                                                letterSpacing:
+                                                    0 /*percentages not used in flutter. defaulting to zero*/,
+                                                fontWeight: FontWeight.normal,
+                                                height: 1),
+                                          )),
+                                    ]))
+                              ])),
+                          onTap: IbuFitri,
+                        )),
+
+                // shape 2
+                Link(
+                  target: LinkTarget.blank,
+                  uri: aji,
+                  builder: (context, Aji) => InkWell(
+                    child: Container(
+                        margin: EdgeInsets.only(top: 80),
+                        width: 375,
+                        height: 75,
+                        decoration: BoxDecoration(),
+                        child: Stack(children: <Widget>[
+                          Container(
+                              width: 326,
+                              height: 55,
+                              decoration: BoxDecoration(),
+                              child: Stack(children: <Widget>[
+                                Positioned(
+                                    top: 0,
+                                    left: 0,
+                                    child: Container(
+                                        width: 55,
                                         height: 55,
-                                        decoration: BoxDecoration(),
-                                        child: Stack(children: <Widget>[
-                                          Positioned(
-                                              top: 0,
-                                              left: 0,
-                                              child: Container(
-                                                  width: 55,
-                                                  height: 55,
-                                                  decoration: BoxDecoration(
-                                                    image: DecorationImage(
-                                                        image: NetworkImage(
-                                                            'https://pps.whatsapp.net/v/t61.24694-24/321172830_499560462245015_140409785024768514_n.jpg?ccb=11-4&oh=01_AdQ__cwfHm5yuVnDZQUwQWzp9MB3R02wokrh4vDpUFUA4g&oe=63C7EC0A')),
-                                                    borderRadius:
-                                                        BorderRadius.all(
-                                                            Radius.elliptical(
-                                                                55, 55)),
-                                                  ))),
-                                          Positioned(
-                                              top: 12,
-                                              left: 68,
-                                              child: Text(
-                                                'Bu Fitri',
-                                                textAlign: TextAlign.left,
-                                                style: TextStyle(
-                                                    color: Color.fromRGBO(
-                                                        0, 0, 0, 1),
-                                                    fontFamily: 'Arial',
-                                                    fontSize: 12,
-                                                    letterSpacing:
-                                                        0 /*percentages not used in flutter. defaulting to zero*/,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    height: 1),
-                                              )),
-                                          Positioned(
-                                              top: 27,
-                                              left: 68,
-                                              child: Text(
-                                                'Pembina',
-                                                textAlign: TextAlign.left,
-                                                style: TextStyle(
-                                                    color: Color.fromRGBO(
-                                                        120, 113, 113, 1),
-                                                    fontFamily: 'Arial',
-                                                    fontSize: 12,
-                                                    letterSpacing:
-                                                        0 /*percentages not used in flutter. defaulting to zero*/,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    height: 1),
-                                              )),
-                                          Positioned(
-                                              top: 20,
-                                              left: 267,
-                                              child: Text(
-                                                'WhatsApp',
-                                                textAlign: TextAlign.left,
-                                                style: TextStyle(
-                                                    color: Color.fromRGBO(
-                                                        115, 108, 108, 1),
-                                                    fontFamily: 'Inter',
-                                                    fontSize: 12,
-                                                    letterSpacing:
-                                                        0 /*percentages not used in flutter. defaulting to zero*/,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    height: 1),
-                                              )),
-                                        ]))
-                                  ])),
-                              onTap: IbuFitri,
-                            ))),
-                Expanded(
-                    child: Link(
-                        target: LinkTarget.blank,
-                        uri: aji,
-                        builder: (context, Aji) => InkWell(
-                              child: Container(
-                                  margin: EdgeInsets.only(top: 80),
-                                  width: 375,
-                                  height: 75,
-                                  decoration: BoxDecoration(),
-                                  child: Stack(children: <Widget>[
-                                    Container(
-                                        width: 326,
-                                        height: 55,
-                                        decoration: BoxDecoration(),
-                                        child: Stack(children: <Widget>[
-                                          Positioned(
-                                              top: 0,
-                                              left: 0,
-                                              child: Container(
-                                                  width: 55,
-                                                  height: 55,
-                                                  decoration: BoxDecoration(
-                                                    image: DecorationImage(
-                                                        image: NetworkImage(
-                                                            'https://pps.whatsapp.net/v/t61.24694-24/315367519_695323188960475_5199948761222407565_n.jpg?ccb=11-4&oh=01_AdQVsSSYPxTr4UzuOiOjWcdgCTL27OnC3fEx9Ors2EvDag&oe=63C93766')),
-                                                    borderRadius:
-                                                        BorderRadius.all(
-                                                            Radius.elliptical(
-                                                                55, 55)),
-                                                  ))),
-                                          Positioned(
-                                              top: 12,
-                                              left: 68,
-                                              child: Text(
-                                                'Aji Ramdani',
-                                                textAlign: TextAlign.left,
-                                                style: TextStyle(
-                                                    color: Color.fromRGBO(
-                                                        0, 0, 0, 1),
-                                                    fontFamily: 'Arial',
-                                                    fontSize: 12,
-                                                    letterSpacing:
-                                                        0 /*percentages not used in flutter. defaulting to zero*/,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    height: 1),
-                                              )),
-                                          Positioned(
-                                              top: 27,
-                                              left: 68,
-                                              child: Text(
-                                                'Ketua',
-                                                textAlign: TextAlign.left,
-                                                style: TextStyle(
-                                                    color: Color.fromRGBO(
-                                                        120, 113, 113, 1),
-                                                    fontFamily: 'Arial',
-                                                    fontSize: 12,
-                                                    letterSpacing:
-                                                        0 /*percentages not used in flutter. defaulting to zero*/,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    height: 1),
-                                              )),
-                                          Positioned(
-                                              top: 20,
-                                              left: 267,
-                                              child: Text(
-                                                'WhatsApp',
-                                                textAlign: TextAlign.left,
-                                                style: TextStyle(
-                                                    color: Color.fromRGBO(
-                                                        115, 108, 108, 1),
-                                                    fontFamily: 'Inter',
-                                                    fontSize: 12,
-                                                    letterSpacing:
-                                                        0 /*percentages not used in flutter. defaulting to zero*/,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    height: 1),
-                                              )),
-                                        ]))
-                                  ])),
-                              onTap: Aji,
-                            ))),
-                Expanded(
-                    child: Link(
-                        target: LinkTarget.blank,
-                        uri: dzikri,
-                        builder: (context, Zikri) => InkWell(
-                              child: Container(
-                                  margin: EdgeInsets.only(top: 160),
-                                  width: 375,
-                                  height: 75,
-                                  decoration: BoxDecoration(),
-                                  child: Stack(children: <Widget>[
-                                    Container(
-                                        width: 326,
-                                        height: 55,
-                                        decoration: BoxDecoration(),
-                                        child: Stack(children: <Widget>[
-                                          Positioned(
-                                              top: 0,
-                                              left: 0,
-                                              child: Container(
-                                                  width: 55,
-                                                  height: 55,
-                                                  decoration: BoxDecoration(
-                                                    image: DecorationImage(
-                                                        image: NetworkImage(
-                                                            'https://pps.whatsapp.net/v/t61.24694-24/310115916_652059946577807_5768844652992555401_n.jpg?ccb=11-4&oh=01_AdSEOcLrWCgLY-GJ4jQUGHlxoLCXJDwKWVsfNXwVo3gJsw&oe=63C95EFA')),
-                                                    borderRadius:
-                                                        BorderRadius.all(
-                                                            Radius.elliptical(
-                                                                55, 55)),
-                                                  ))),
-                                          Positioned(
-                                              top: 12,
-                                              left: 68,
-                                              child: Text(
-                                                'Dzikri Maulana',
-                                                textAlign: TextAlign.left,
-                                                style: TextStyle(
-                                                    color: Color.fromRGBO(
-                                                        0, 0, 0, 1),
-                                                    fontFamily: 'Arial',
-                                                    fontSize: 12,
-                                                    letterSpacing:
-                                                        0 /*percentages not used in flutter. defaulting to zero*/,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    height: 1),
-                                              )),
-                                          Positioned(
-                                              top: 27,
-                                              left: 68,
-                                              child: Text(
-                                                'Editor',
-                                                textAlign: TextAlign.left,
-                                                style: TextStyle(
-                                                    color: Color.fromRGBO(
-                                                        120, 113, 113, 1),
-                                                    fontFamily: 'Arial',
-                                                    fontSize: 12,
-                                                    letterSpacing:
-                                                        0 /*percentages not used in flutter. defaulting to zero*/,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    height: 1),
-                                              )),
-                                          Positioned(
-                                              top: 20,
-                                              left: 267,
-                                              child: Text(
-                                                'WhatsApp',
-                                                textAlign: TextAlign.left,
-                                                style: TextStyle(
-                                                    color: Color.fromRGBO(
-                                                        115, 108, 108, 1),
-                                                    fontFamily: 'Inter',
-                                                    fontSize: 12,
-                                                    letterSpacing:
-                                                        0 /*percentages not used in flutter. defaulting to zero*/,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    height: 1),
-                                              )),
-                                        ]))
-                                  ])),
-                              onTap: Zikri,
-                            ))),
-                Expanded(
-                    child: Link(
-                        target: LinkTarget.blank,
-                        uri: dhira,
-                        builder: (context, Dhira) => InkWell(
-                              child: Container(
-                                  margin: EdgeInsets.only(top: 240),
-                                  width: 375,
-                                  height: 75,
-                                  decoration: BoxDecoration(),
-                                  child: Stack(children: <Widget>[
-                                    Container(
-                                        width: 326,
-                                        height: 55,
-                                        decoration: BoxDecoration(),
-                                        child: Stack(children: <Widget>[
-                                          Positioned(
-                                              top: 0,
-                                              left: 0,
-                                              child: Container(
-                                                  width: 55,
-                                                  height: 55,
-                                                  decoration: BoxDecoration(
-                                                    image: DecorationImage(
-                                                        image: NetworkImage(
-                                                            'https://pps.whatsapp.net/v/t61.24694-24/317659497_133889025935220_4243274643690792023_n.jpg?ccb=11-4&oh=01_AdS6BwnDaZYuZ9XOuGq2JM1MibxICsRLCn7FXpjI6qd_-Q&oe=63C940C1')),
-                                                    borderRadius:
-                                                        BorderRadius.all(
-                                                            Radius.elliptical(
-                                                                55, 55)),
-                                                  ))),
-                                          Positioned(
-                                              top: 12,
-                                              left: 68,
-                                              child: Text(
-                                                'Dhira Windari',
-                                                textAlign: TextAlign.left,
-                                                style: TextStyle(
-                                                    color: Color.fromRGBO(
-                                                        0, 0, 0, 1),
-                                                    fontFamily: 'Arial',
-                                                    fontSize: 12,
-                                                    letterSpacing:
-                                                        0 /*percentages not used in flutter. defaulting to zero*/,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    height: 1),
-                                              )),
-                                          Positioned(
-                                              top: 27,
-                                              left: 68,
-                                              child: Text(
-                                                'Jurnalist',
-                                                textAlign: TextAlign.left,
-                                                style: TextStyle(
-                                                    color: Color.fromRGBO(
-                                                        120, 113, 113, 1),
-                                                    fontFamily: 'Arial',
-                                                    fontSize: 12,
-                                                    letterSpacing:
-                                                        0 /*percentages not used in flutter. defaulting to zero*/,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    height: 1),
-                                              )),
-                                          Positioned(
-                                              top: 20,
-                                              left: 267,
-                                              child: Text(
-                                                'WhatsApp',
-                                                textAlign: TextAlign.left,
-                                                style: TextStyle(
-                                                    color: Color.fromRGBO(
-                                                        115, 108, 108, 1),
-                                                    fontFamily: 'Inter',
-                                                    fontSize: 12,
-                                                    letterSpacing:
-                                                        0 /*percentages not used in flutter. defaulting to zero*/,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    height: 1),
-                                              )),
-                                        ]))
-                                  ])),
-                              onTap: Dhira,
-                            ))),
+                                        decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                              image: NetworkImage(
+                                                  'https://pps.whatsapp.net/v/t61.24694-24/315367519_695323188960475_5199948761222407565_n.jpg?ccb=11-4&oh=01_AdQVsSSYPxTr4UzuOiOjWcdgCTL27OnC3fEx9Ors2EvDag&oe=63C93766')),
+                                          borderRadius: BorderRadius.all(
+                                              Radius.elliptical(55, 55)),
+                                        ))),
+                                Positioned(
+                                    top: 12,
+                                    left: 68,
+                                    child: Text(
+                                      'Aji Ramdani',
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          color: Color.fromRGBO(0, 0, 0, 1),
+                                          fontFamily: 'Arial',
+                                          fontSize: 12,
+                                          letterSpacing:
+                                              0 /*percentages not used in flutter. defaulting to zero*/,
+                                          fontWeight: FontWeight.normal,
+                                          height: 1),
+                                    )),
+                                Positioned(
+                                    top: 27,
+                                    left: 68,
+                                    child: Text(
+                                      'Ketua',
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          color:
+                                              Color.fromRGBO(120, 113, 113, 1),
+                                          fontFamily: 'Arial',
+                                          fontSize: 12,
+                                          letterSpacing:
+                                              0 /*percentages not used in flutter. defaulting to zero*/,
+                                          fontWeight: FontWeight.normal,
+                                          height: 1),
+                                    )),
+                                Positioned(
+                                    top: 20,
+                                    left: 267,
+                                    child: Text(
+                                      'WhatsApp',
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          color:
+                                              Color.fromRGBO(115, 108, 108, 1),
+                                          fontFamily: 'Inter',
+                                          fontSize: 12,
+                                          letterSpacing:
+                                              0 /*percentages not used in flutter. defaulting to zero*/,
+                                          fontWeight: FontWeight.normal,
+                                          height: 1),
+                                    )),
+                              ]))
+                        ])),
+                    onTap: Aji,
+                  ),
+                ),
+                // shape 3
+
+                Link(
+                    target: LinkTarget.blank,
+                    uri: dzikri,
+                    builder: (context, Zikri) => InkWell(
+                          child: Container(
+                              margin: EdgeInsets.only(top: 160),
+                              width: 375,
+                              height: 75,
+                              decoration: BoxDecoration(),
+                              child: Stack(children: <Widget>[
+                                Container(
+                                    width: 326,
+                                    height: 55,
+                                    decoration: BoxDecoration(),
+                                    child: Stack(children: <Widget>[
+                                      Positioned(
+                                          top: 0,
+                                          left: 0,
+                                          child: Container(
+                                              width: 55,
+                                              height: 55,
+                                              decoration: BoxDecoration(
+                                                image: DecorationImage(
+                                                    image: NetworkImage(
+                                                        'https://pps.whatsapp.net/v/t61.24694-24/310115916_652059946577807_5768844652992555401_n.jpg?ccb=11-4&oh=01_AdSEOcLrWCgLY-GJ4jQUGHlxoLCXJDwKWVsfNXwVo3gJsw&oe=63C95EFA')),
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.elliptical(55, 55)),
+                                              ))),
+                                      Positioned(
+                                          top: 12,
+                                          left: 68,
+                                          child: Text(
+                                            'Dzikri Maulana',
+                                            textAlign: TextAlign.left,
+                                            style: TextStyle(
+                                                color:
+                                                    Color.fromRGBO(0, 0, 0, 1),
+                                                fontFamily: 'Arial',
+                                                fontSize: 12,
+                                                letterSpacing:
+                                                    0 /*percentages not used in flutter. defaulting to zero*/,
+                                                fontWeight: FontWeight.normal,
+                                                height: 1),
+                                          )),
+                                      Positioned(
+                                          top: 27,
+                                          left: 68,
+                                          child: Text(
+                                            'Editor',
+                                            textAlign: TextAlign.left,
+                                            style: TextStyle(
+                                                color: Color.fromRGBO(
+                                                    120, 113, 113, 1),
+                                                fontFamily: 'Arial',
+                                                fontSize: 12,
+                                                letterSpacing:
+                                                    0 /*percentages not used in flutter. defaulting to zero*/,
+                                                fontWeight: FontWeight.normal,
+                                                height: 1),
+                                          )),
+                                      Positioned(
+                                          top: 20,
+                                          left: 267,
+                                          child: Text(
+                                            'WhatsApp',
+                                            textAlign: TextAlign.left,
+                                            style: TextStyle(
+                                                color: Color.fromRGBO(
+                                                    115, 108, 108, 1),
+                                                fontFamily: 'Inter',
+                                                fontSize: 12,
+                                                letterSpacing:
+                                                    0 /*percentages not used in flutter. defaulting to zero*/,
+                                                fontWeight: FontWeight.normal,
+                                                height: 1),
+                                          )),
+                                    ]))
+                              ])),
+                          onTap: Zikri,
+                        )),
+                // shape 4
+                Link(
+                    target: LinkTarget.blank,
+                    uri: dhira,
+                    builder: (context, Dhira) => InkWell(
+                          child: Container(
+                              margin: EdgeInsets.only(top: 240),
+                              width: 375,
+                              height: 75,
+                              decoration: BoxDecoration(),
+                              child: Stack(children: <Widget>[
+                                Container(
+                                    width: 326,
+                                    height: 55,
+                                    decoration: BoxDecoration(),
+                                    child: Stack(children: <Widget>[
+                                      Positioned(
+                                          top: 0,
+                                          left: 0,
+                                          child: Container(
+                                              width: 55,
+                                              height: 55,
+                                              decoration: BoxDecoration(
+                                                image: DecorationImage(
+                                                    image: NetworkImage(
+                                                        'https://pps.whatsapp.net/v/t61.24694-24/317659497_133889025935220_4243274643690792023_n.jpg?ccb=11-4&oh=01_AdS6BwnDaZYuZ9XOuGq2JM1MibxICsRLCn7FXpjI6qd_-Q&oe=63C940C1')),
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.elliptical(55, 55)),
+                                              ))),
+                                      Positioned(
+                                          top: 12,
+                                          left: 68,
+                                          child: Text(
+                                            'Dhira Windari',
+                                            textAlign: TextAlign.left,
+                                            style: TextStyle(
+                                                color:
+                                                    Color.fromRGBO(0, 0, 0, 1),
+                                                fontFamily: 'Arial',
+                                                fontSize: 12,
+                                                letterSpacing:
+                                                    0 /*percentages not used in flutter. defaulting to zero*/,
+                                                fontWeight: FontWeight.normal,
+                                                height: 1),
+                                          )),
+                                      Positioned(
+                                          top: 27,
+                                          left: 68,
+                                          child: Text(
+                                            'Jurnalist',
+                                            textAlign: TextAlign.left,
+                                            style: TextStyle(
+                                                color: Color.fromRGBO(
+                                                    120, 113, 113, 1),
+                                                fontFamily: 'Arial',
+                                                fontSize: 12,
+                                                letterSpacing:
+                                                    0 /*percentages not used in flutter. defaulting to zero*/,
+                                                fontWeight: FontWeight.normal,
+                                                height: 1),
+                                          )),
+                                      Positioned(
+                                          top: 20,
+                                          left: 267,
+                                          child: Text(
+                                            'WhatsApp',
+                                            textAlign: TextAlign.left,
+                                            style: TextStyle(
+                                                color: Color.fromRGBO(
+                                                    115, 108, 108, 1),
+                                                fontFamily: 'Inter',
+                                                fontSize: 12,
+                                                letterSpacing:
+                                                    0 /*percentages not used in flutter. defaulting to zero*/,
+                                                fontWeight: FontWeight.normal,
+                                                height: 1),
+                                          )),
+                                    ]))
+                              ])),
+                          onTap: Dhira,
+                        )),
               ],
             ),
           )
