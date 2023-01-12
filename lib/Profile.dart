@@ -1,5 +1,4 @@
-import 'dart:io';
-import 'dart:ui';
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:app_it/main.dart';
 import 'package:app_it/Tentang.dart';
@@ -96,12 +95,21 @@ class ProfileIt extends StatelessWidget {
                           color: Colors.blue),
                     )),
                 Positioned(
-                    top: 260,
-                    left: 70,
-                    child: Text(
-                      'SMKS TERPADU IBADURRAHMAN',
-                      style: TextStyle(fontSize: 16),
-                    )),
+                  top: 260,
+                  left: 70,
+                  child: AnimatedTextKit(
+                    animatedTexts: [
+                      FadeAnimatedText(
+                        'SMKS TERPADU IBAADURRAHMAN',
+                        textStyle: TextStyle(),
+                      ),
+                      FadeAnimatedText(
+                        'SMKS PARAWISATA PERCIK MADANI',
+                      ),
+                    ],
+                    repeatForever: true,
+                  ),
+                ),
                 // element medsos
                 Positioned(
                     top: 300,

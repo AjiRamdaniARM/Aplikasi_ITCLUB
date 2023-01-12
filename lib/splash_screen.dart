@@ -3,6 +3,7 @@ import 'package:app_it/main.dart';
 import 'package:lottie/lottie.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -45,13 +46,14 @@ class _SplashScreenState extends State<SplashScreen>
         Container(
             width: MediaQuery.of(context).size.width,
             child: Center(
-              child: AutoSizeText(
+              child: GradientText(
                 'Welcome IT Club Lovers',
-                style: TextStyle(
-                    fontFamily: 'Valken',
-                    color: Color.fromRGBO(35, 225, 189, 1),
-                    fontSize: 30),
+                style: TextStyle(fontFamily: 'Valken', fontSize: 30),
                 maxLines: maxLines,
+                colors: [
+                  Color.fromARGB(255, 87, 211, 91),
+                  Color.fromARGB(255, 10, 254, 230)
+                ],
               ),
             ))
       ]),

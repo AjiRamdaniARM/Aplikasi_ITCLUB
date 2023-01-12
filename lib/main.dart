@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:app_it/Tentang.dart';
 import 'package:app_it/animasi/animasicontact.dart';
 import 'package:flutter/material.dart';
@@ -152,34 +153,34 @@ class _MyHomePageState extends State<MyHomePage> {
                             height: 1),
                       )),
                   Positioned(
-                      top: 110,
-                      left: 5,
-                      child: Text(
-                        'SMKS TERPADU IBADURRAHMAN',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                            color: Color.fromRGBO(0, 0, 0, 1),
-                            fontFamily: 'Inter',
-                            fontSize: 15,
-                            letterSpacing:
-                                0 /*percentages not used in flutter. defaulting to zero*/,
-                            fontWeight: FontWeight.normal,
-                            height: 1),
-                      )),
+                    top: 110,
+                    left: 5,
+                    child: AnimatedTextKit(
+                      animatedTexts: [
+                        FadeAnimatedText(
+                          'SMKS TERPADU IBAADURRAHMAN',
+                          textStyle: TextStyle(),
+                        ),
+                        FadeAnimatedText(
+                          'SMKS PARAWISATA PERCIK MADANI',
+                        ),
+                      ],
+                      repeatForever: true,
+                    ),
+                  ),
                   Positioned(
                       top: 75,
                       left: 0,
-                      child: Text(
+                      child: GradientText(
                         'IT CLUB LOVERS',
-                        textAlign: TextAlign.left,
                         style: TextStyle(
-                            color: Color.fromRGBO(1, 118, 255, 1),
                             fontFamily: 'Valken',
                             fontSize: 35,
                             letterSpacing:
                                 0 /*pesrcentages not used in flutter. defaulting to zero*/,
                             fontWeight: FontWeight.normal,
                             height: 1),
+                        colors: [Colors.blue, Color.fromARGB(255, 0, 187, 255)],
                       )),
 
                   // shape bar
