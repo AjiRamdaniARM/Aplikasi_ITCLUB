@@ -32,6 +32,13 @@ class _SplashScreenState extends State<SplashScreen>
   Widget build(BuildContext context) {
     final maxLines = 1;
     return Scaffold(
+      bottomNavigationBar: Container(
+          height: 50,
+          alignment: Alignment.center,
+          child: Text(
+            "Developer By ARI",
+            style: TextStyle(fontFamily: "Robotto", letterSpacing: 1),
+          )),
       body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
         Lottie.network(
             'https://assets9.lottiefiles.com/packages/lf20_3vbOcw.json',
@@ -45,17 +52,23 @@ class _SplashScreenState extends State<SplashScreen>
         }),
         Container(
             width: MediaQuery.of(context).size.width,
-            child: Center(
-              child: GradientText(
-                'Welcome IT Club Lovers',
-                style: TextStyle(fontFamily: 'Valken', fontSize: 30),
-                maxLines: maxLines,
-                colors: [
-                  Color.fromARGB(255, 87, 211, 91),
-                  Color.fromARGB(255, 10, 254, 230)
-                ],
-              ),
-            ))
+            child: ConstrainedBox(
+                constraints: BoxConstraints(minWidth: 10, maxWidth: 100),
+                child: Center(
+                    child: FittedBox(
+                  child: Padding(
+                    padding: EdgeInsets.all(10),
+                    child: GradientText(
+                      'Welcome IT Club Lovers',
+                      style: TextStyle(fontFamily: 'Valken', fontSize: 25),
+                      maxLines: 2,
+                      colors: [
+                        Color.fromARGB(255, 87, 211, 91),
+                        Color.fromARGB(255, 10, 254, 230)
+                      ],
+                    ),
+                  ),
+                ))))
       ]),
     );
   }

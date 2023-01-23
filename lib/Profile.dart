@@ -5,6 +5,7 @@ import 'package:app_it/Tentang.dart';
 import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+// data link API
 final Uri _url = Uri.parse('https://flutter.dev');
 final Uri instagram = Uri.parse('https://www.instagram.com/itclubsmkti/');
 final Uri youtube = Uri.parse('https://www.youtube.com/@itclub_smkti4962');
@@ -272,7 +273,7 @@ class ProfileIt extends StatelessWidget {
                         child: Container(
                           margin: EdgeInsets.only(left: 100),
                           child: Text(
-                            'Develover By Aji Ramdani',
+                            'Developer By Aji Ramdani',
                             style: TextStyle(
                                 color: Color.fromARGB(255, 243, 33, 33)),
                           ),

@@ -55,3 +55,6 @@ flutter:
     - family: Poppins-Bold
       fonts:
         - asset: assets/font/Poppins.ttf
+    - family: Robotto
+      fonts:
+        - asset: assets/font/Robotto.ttf

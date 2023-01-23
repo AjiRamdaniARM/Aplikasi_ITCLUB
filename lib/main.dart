@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-List<String> images = ["assets/image/bg1.png", "assets/image/bg1.png"];
+List<String> images = ["assets/image/bg1.png", "assets/image/bg2.png"];
 String title = "Lorem Ipsum";
 String desc = "Lorem ipsum sit dolor amet";
 
@@ -162,7 +162,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           textStyle: TextStyle(),
                         ),
                         FadeAnimatedText(
-                          'SMKS PARAWISATA PERCIK MADANI',
+                          'SMKS PARIWISATA PERCIK MADANI',
                         ),
                       ],
                       repeatForever: true,
@@ -175,7 +175,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         'IT CLUB LOVERS',
                         style: TextStyle(
                             fontFamily: 'Valken',
-                            fontSize: 35,
+                            fontSize: 30,
                             letterSpacing:
                                 0 /*pesrcentages not used in flutter. defaulting to zero*/,
                             fontWeight: FontWeight.normal,
@@ -210,8 +210,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                 ),
                               ),
                               Container(
-                                margin: EdgeInsets.only(left: 63),
-                                width: 120,
+                                margin: EdgeInsets.only(left: 80),
+                                width: MediaQuery.of(context).size.width * 0.3,
                                 height: 32,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.only(
@@ -243,7 +243,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                 Positioned(
                                     left: 0,
                                     child: Link(
-                                        target: LinkTarget.self,
+                                        target: LinkTarget.blank,
                                         uri: aksesImage,
                                         builder: (context, AksesImage) =>
                                             InkWell(

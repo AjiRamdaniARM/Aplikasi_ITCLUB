@@ -29,10 +29,11 @@ class Contact extends StatelessWidget {
       child: Container(
         margin: EdgeInsets.only(left: 20, top: 30),
         width: 907,
-        height: 900,
+        height: MediaQuery.of(context).size.height * 1.6,
         decoration: BoxDecoration(),
         child: Stack(children: <Widget>[
-          Positioned(
+          Center(
+              heightFactor: 1,
               child: Container(
                   width: 360,
                   height: 211,
@@ -59,7 +60,7 @@ class Contact extends StatelessWidget {
                           'CONTACT',
                           style: TextStyle(
                             fontFamily: 'Valken',
-                            fontSize: 70,
+                            fontSize: 50,
                             color: Colors.white,
                           ),
                         ),
@@ -822,6 +823,166 @@ class Contact extends StatelessWidget {
                                     ]))
                               ])),
                           onTap: Hafidz,
+                        )),
+                Link(
+                    target: LinkTarget.blank,
+                    uri: nausa,
+                    builder: (context, Nausa) => InkWell(
+                          child: Container(
+                              width: 375,
+                              height: 75,
+                              margin: EdgeInsets.only(top: 00),
+                              decoration: BoxDecoration(),
+                              child: Stack(children: <Widget>[
+                                Container(
+                                    width: 326,
+                                    height: 55,
+                                    decoration: BoxDecoration(),
+                                    child: Stack(children: <Widget>[
+                                      Positioned(
+                                          top: 0,
+                                          left: 0,
+                                          child: Container(
+                                              width: 55,
+                                              height: 55,
+                                              decoration: BoxDecoration(
+                                                image: DecorationImage(
+                                                    image: NetworkImage(
+                                                        'https://webstockreview.net/images/profile-icon-png-3.png')),
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.elliptical(55, 55)),
+                                              ))),
+                                      Positioned(
+                                          top: 12,
+                                          left: 68,
+                                          child: Text(
+                                            'Nausa Putri Kinana',
+                                            textAlign: TextAlign.left,
+                                            style: TextStyle(
+                                                color:
+                                                    Color.fromRGBO(0, 0, 0, 1),
+                                                fontFamily: 'Arial',
+                                                fontSize: 12,
+                                                letterSpacing:
+                                                    0 /*percentages not used in flutter. defaulting to zero*/,
+                                                fontWeight: FontWeight.normal,
+                                                height: 1),
+                                          )),
+                                      Positioned(
+                                          top: 27,
+                                          left: 68,
+                                          child: Text(
+                                            'Bendahara',
+                                            textAlign: TextAlign.left,
+                                            style: TextStyle(
+                                                color: Color.fromRGBO(
+                                                    120, 113, 113, 1),
+                                                fontFamily: 'Arial',
+                                                fontSize: 12,
+                                                letterSpacing:
+                                                    0 /*percentages not used in flutter. defaulting to zero*/,
+                                                fontWeight: FontWeight.normal,
+                                                height: 1),
+                                          )),
+                                      Positioned(
+                                          top: 20,
+                                          left: 267,
+                                          child: Text(
+                                            'WhatsApp',
+                                            textAlign: TextAlign.left,
+                                            style: TextStyle(
+                                                color: Color.fromRGBO(
+                                                    115, 108, 108, 1),
+                                                fontFamily: 'Inter',
+                                                fontSize: 12,
+                                                letterSpacing:
+                                                    0 /*percentages not used in flutter. defaulting to zero*/,
+                                                fontWeight: FontWeight.normal,
+                                                height: 1),
+                                          )),
+                                    ]))
+                              ])),
+                          onTap: Nausa,
+                        )),
+                Link(
+                    target: LinkTarget.blank,
+                    uri: kamila,
+                    builder: (context, Kamila) => InkWell(
+                          child: Container(
+                              width: 375,
+                              height: 75,
+                              margin: EdgeInsets.only(top: 00),
+                              decoration: BoxDecoration(),
+                              child: Stack(children: <Widget>[
+                                Container(
+                                    width: 326,
+                                    height: 55,
+                                    decoration: BoxDecoration(),
+                                    child: Stack(children: <Widget>[
+                                      Positioned(
+                                          top: 0,
+                                          left: 0,
+                                          child: Container(
+                                              width: 55,
+                                              height: 55,
+                                              decoration: BoxDecoration(
+                                                image: DecorationImage(
+                                                    image: NetworkImage(
+                                                        'https://webstockreview.net/images/profile-icon-png-3.png')),
+                                                borderRadius: BorderRadius.all(
+                                                    Radius.elliptical(55, 55)),
+                                              ))),
+                                      Positioned(
+                                          top: 12,
+                                          left: 68,
+                                          child: Text(
+                                            'Kamila Azzahra',
+                                            textAlign: TextAlign.left,
+                                            style: TextStyle(
+                                                color:
+                                                    Color.fromRGBO(0, 0, 0, 1),
+                                                fontFamily: 'Arial',
+                                                fontSize: 12,
+                                                letterSpacing:
+                                                    0 /*percentages not used in flutter. defaulting to zero*/,
+                                                fontWeight: FontWeight.normal,
+                                                height: 1),
+                                          )),
+                                      Positioned(
+                                          top: 27,
+                                          left: 68,
+                                          child: Text(
+                                            'Bendahara',
+                                            textAlign: TextAlign.left,
+                                            style: TextStyle(
+                                                color: Color.fromRGBO(
+                                                    120, 113, 113, 1),
+                                                fontFamily: 'Arial',
+                                                fontSize: 12,
+                                                letterSpacing:
+                                                    0 /*percentages not used in flutter. defaulting to zero*/,
+                                                fontWeight: FontWeight.normal,
+                                                height: 1),
+                                          )),
+                                      Positioned(
+                                          top: 20,
+                                          left: 267,
+                                          child: Text(
+                                            'WhatsApp',
+                                            textAlign: TextAlign.left,
+                                            style: TextStyle(
+                                                color: Color.fromRGBO(
+                                                    115, 108, 108, 1),
+                                                fontFamily: 'Inter',
+                                                fontSize: 12,
+                                                letterSpacing:
+                                                    0 /*percentages not used in flutter. defaulting to zero*/,
+                                                fontWeight: FontWeight.normal,
+                                                height: 1),
+                                          )),
+                                    ]))
+                              ])),
+                          onTap: Kamila,
                         )),
               ],
             ),
