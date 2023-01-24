@@ -13,6 +13,20 @@ class CloudMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Future openBrowserURL({
+      required String url,
+      bool inApp = false,
+    }) async {
+      if (await canLaunch(url)) {
+        await launch(
+          url,
+          forceSafariVC: inApp,
+          forceWebView: inApp,
+          enableJavaScript: true,
+        );
+      }
+    }
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
@@ -88,7 +102,7 @@ class CloudMobile extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.all(10),
             child: Container(
-              width: 350,
+              width: MediaQuery.of(context).size.width * 1,
               height: 211,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
@@ -110,63 +124,247 @@ class CloudMobile extends StatelessWidget {
                 children: [
                   Container(
                     margin: EdgeInsets.all(10),
+                    width: MediaQuery.of(context).size.width * 5,
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        InkWell(
-                          onTap: () async {
-                            final url = 'https://github.com/flutter/gallery/';
-                            if (await canLaunch(url)) {
-                              await launch(url, forceSafariVC: false);
-                            }
-                          },
-                          child: Container(
-                            width: 150,
-                            height: 50,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(6),
-                                topRight: Radius.circular(6),
-                                bottomLeft: Radius.circular(6),
-                                bottomRight: Radius.circular(6),
-                              ),
-                              color: Color.fromARGB(123, 0, 110, 255),
-                              border: Border.all(
-                                color: Color.fromARGB(255, 30, 0, 255),
-                                width: 1,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            InkWell(
+                              onTap: () async {
+                                final mtlogo =
+                                    "https://drive.google.com/drive/folders/1E-leeP4bo2-fxU8B1Yzdqe3_ffqGNBbG?usp=share_link";
+                                openBrowserURL(url: mtlogo, inApp: false);
+                              },
+                              child: Container(
+                                width: MediaQuery.of(context).size.width * 0.4,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(6),
+                                    topRight: Radius.circular(6),
+                                    bottomLeft: Radius.circular(6),
+                                    bottomRight: Radius.circular(6),
+                                  ),
+                                  color: Color.fromARGB(123, 0, 110, 255),
+                                  border: Border.all(
+                                    color: Color.fromARGB(255, 30, 0, 255),
+                                    width: 1,
+                                  ),
+                                ),
+                                child: Stack(children: <Widget>[
+                                  Row(
+                                    children: <Widget>[
+                                      Expanded(
+                                          child: Container(
+                                              child: IconButton(
+                                        iconSize: 1,
+                                        onPressed: () => {},
+                                        icon: Image.asset(
+                                          'assets/image/folder.webp',
+                                          width: 30,
+                                        ),
+                                      ))),
+                                      Expanded(
+                                        child: Container(
+                                            alignment: Alignment.center,
+                                            margin: EdgeInsets.only(right: 20),
+                                            child: FittedBox(
+                                              child: Text(
+                                                'Mentahan Logo',
+                                                style: TextStyle(
+                                                    fontSize: 12,
+                                                    color: Color.fromARGB(
+                                                        255, 255, 255, 255),
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                            )),
+                                      )
+                                    ],
+                                  )
+                                ]),
                               ),
                             ),
-                            child: Stack(children: <Widget>[
-                              Row(
-                                children: <Widget>[
-                                  Expanded(
-                                      child: Container(
-                                          child: IconButton(
-                                    iconSize: 1,
-                                    onPressed: () => {},
-                                    icon: Image.asset(
-                                      'assets/image/folder.webp',
-                                      width: 30,
-                                    ),
-                                  ))),
-                                  Expanded(
-                                    child: Container(
-                                      alignment: Alignment.center,
-                                      margin: EdgeInsets.only(right: 20),
-                                      child: Text(
-                                        'Mentahan Logo',
-                                        style: TextStyle(
-                                            fontSize: 12,
-                                            color: Color.fromARGB(
-                                                255, 255, 255, 255),
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    ),
+                            InkWell(
+                              onTap: () async {
+                                final karyaIt =
+                                    "https://drive.google.com/drive/folders/1ovyhibk3vHfSuZrm_lq8I87bX3Q23dEn?usp=sharing";
+                                openBrowserURL(url: karyaIt, inApp: false);
+                              },
+                              child: Container(
+                                width: MediaQuery.of(context).size.width * 0.4,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(6),
+                                    topRight: Radius.circular(6),
+                                    bottomLeft: Radius.circular(6),
+                                    bottomRight: Radius.circular(6),
+                                  ),
+                                  color: Color.fromARGB(123, 0, 110, 255),
+                                  border: Border.all(
+                                    color: Color.fromARGB(255, 30, 0, 255),
+                                    width: 1,
+                                  ),
+                                ),
+                                child: Stack(children: <Widget>[
+                                  Row(
+                                    children: <Widget>[
+                                      Expanded(
+                                          child: Container(
+                                              child: IconButton(
+                                        iconSize: 1,
+                                        onPressed: () => {},
+                                        icon: Image.asset(
+                                          'assets/image/folder.webp',
+                                          width: 30,
+                                        ),
+                                      ))),
+                                      Expanded(
+                                        child: Container(
+                                            alignment: Alignment.center,
+                                            margin: EdgeInsets.only(right: 20),
+                                            child: FittedBox(
+                                              fit: BoxFit.fill,
+                                              child: Text(
+                                                'Karya It',
+                                                style: TextStyle(
+                                                    fontSize: 100,
+                                                    color: Color.fromARGB(
+                                                        255, 255, 255, 255),
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                            )),
+                                      )
+                                    ],
                                   )
-                                ],
-                              )
-                            ]),
-                          ),
-                        )
+                                ]),
+                              ),
+                            ),
+                          ],
+                        ),
+                        // roww 2
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            InkWell(
+                              onTap: () async {
+                                final hariGuru =
+                                    "https://drive.google.com/drive/folders/1rjMKXwb1vPDJmCDKzoDLiQ3SPxnETgj7?usp=sharing";
+                                openBrowserURL(url: hariGuru, inApp: false);
+                              },
+                              child: Container(
+                                width: MediaQuery.of(context).size.width * 0.4,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(6),
+                                    topRight: Radius.circular(6),
+                                    bottomLeft: Radius.circular(6),
+                                    bottomRight: Radius.circular(6),
+                                  ),
+                                  color: Color.fromARGB(123, 0, 110, 255),
+                                  border: Border.all(
+                                    color: Color.fromARGB(255, 30, 0, 255),
+                                    width: 1,
+                                  ),
+                                ),
+                                child: Stack(children: <Widget>[
+                                  Row(
+                                    children: <Widget>[
+                                      Expanded(
+                                          child: Container(
+                                              child: IconButton(
+                                        iconSize: 1,
+                                        onPressed: () => {},
+                                        icon: Image.asset(
+                                          'assets/image/folder.webp',
+                                          width: 30,
+                                        ),
+                                      ))),
+                                      Expanded(
+                                        child: Container(
+                                            alignment: Alignment.center,
+                                            margin: EdgeInsets.only(right: 20),
+                                            child: FittedBox(
+                                              child: Text(
+                                                'Dokumetasi Hari Guru',
+                                                style: TextStyle(
+                                                    fontSize: 12,
+                                                    color: Color.fromARGB(
+                                                        255, 255, 255, 255),
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                            )),
+                                      )
+                                    ],
+                                  )
+                                ]),
+                              ),
+                            ),
+                            InkWell(
+                              onTap: () async {
+                                final dMilad =
+                                    "https://drive.google.com/drive/folders/1-3bAIXYnCeUBCLXUJeJvc8F727DVcOQq?usp=sharing";
+                                openBrowserURL(url: dMilad, inApp: false);
+                              },
+                              child: Container(
+                                width: MediaQuery.of(context).size.width * 0.4,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(6),
+                                    topRight: Radius.circular(6),
+                                    bottomLeft: Radius.circular(6),
+                                    bottomRight: Radius.circular(6),
+                                  ),
+                                  color: Color.fromARGB(123, 0, 110, 255),
+                                  border: Border.all(
+                                    color: Color.fromARGB(255, 30, 0, 255),
+                                    width: 1,
+                                  ),
+                                ),
+                                child: Stack(children: <Widget>[
+                                  Row(
+                                    children: <Widget>[
+                                      Expanded(
+                                          child: Container(
+                                              child: IconButton(
+                                        iconSize: 1,
+                                        onPressed: () => {},
+                                        icon: Image.asset(
+                                          'assets/image/folder.webp',
+                                          width: 30,
+                                        ),
+                                      ))),
+                                      Expanded(
+                                        child: Container(
+                                            alignment: Alignment.center,
+                                            margin: EdgeInsets.only(right: 20),
+                                            child: FittedBox(
+                                              fit: BoxFit.fill,
+                                              child: Text(
+                                                'Dokumentasi Milad',
+                                                style: TextStyle(
+                                                    fontSize: 100,
+                                                    color: Color.fromARGB(
+                                                        255, 255, 255, 255),
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                            )),
+                                      )
+                                    ],
+                                  )
+                                ]),
+                              ),
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   )

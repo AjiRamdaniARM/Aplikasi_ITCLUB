@@ -4,16 +4,15 @@ import 'package:app_it/animasi/animasicontact.dart';
 import 'package:flutter/material.dart';
 import 'package:app_it/splash_screen.dart';
 import 'package:url_launcher/link.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:app_it/Profile.dart';
 import 'package:app_it/Cloud.dart';
 import 'package:app_it/Contact.dart';
 import 'package:app_it/animasi/animasicloud.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
-final Uri _url = Uri.parse('https://flutter.dev');
 final Uri maps = Uri.parse('https://maps.app.goo.gl/FGJSFggm5LifB4St7');
-final Uri aksesImage = Uri.parse(
-    'https://armoviefilm.000webhostapp.com/akses_image/akses_image.html');
+
 final Uri aksesTugas = Uri.parse(
     'https://armoviefilm.000webhostapp.com/akses-tugas/akses-tugas.html');
 final Uri aksesAbsen = Uri.parse('https://forms.gle/5gb61j32YrZLKFiq9');
@@ -45,6 +44,20 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    Future openBrowserURL({
+      required String url,
+      bool inApp = false,
+    }) async {
+      if (await canLaunch(url)) {
+        await launch(
+          url,
+          forceSafariVC: inApp,
+          forceWebView: inApp,
+          enableJavaScript: true,
+        );
+      }
+    }
+
     return Scaffold(
         bottomNavigationBar: Container(
             height: 90,
@@ -242,51 +255,47 @@ class _MyHomePageState extends State<MyHomePage> {
                               children: <Widget>[
                                 Positioned(
                                     left: 0,
-                                    child: Link(
-                                        target: LinkTarget.blank,
-                                        uri: aksesImage,
-                                        builder: (context, AksesImage) =>
-                                            InkWell(
-                                              child: Container(
-                                                width: 149,
-                                                height: 68,
-                                                decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.only(
-                                                    topLeft: Radius.circular(9),
-                                                    topRight:
-                                                        Radius.circular(9),
-                                                    bottomLeft:
-                                                        Radius.circular(9),
-                                                    bottomRight:
-                                                        Radius.circular(9),
-                                                  ),
-                                                  color: Color.fromRGBO(
-                                                      255, 255, 255, 1),
-                                                ),
-                                                child: Stack(
-                                                  children: <Widget>[
-                                                    Positioned(
-                                                      top: 15,
-                                                      left: 12,
-                                                      child: Image.asset(
-                                                        'assets/image/shapeImage.png',
-                                                        width: 40,
-                                                      ),
-                                                    ),
-                                                    Positioned(
-                                                        top: 23,
-                                                        left: 65,
-                                                        child: Text(
-                                                          'Image',
-                                                          style: TextStyle(
-                                                              fontSize: 20),
-                                                        ))
-                                                  ],
+                                    child: InkWell(
+                                        child: Container(
+                                          width: 149,
+                                          height: 68,
+                                          decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.only(
+                                              topLeft: Radius.circular(9),
+                                              topRight: Radius.circular(9),
+                                              bottomLeft: Radius.circular(9),
+                                              bottomRight: Radius.circular(9),
+                                            ),
+                                            color: Color.fromRGBO(
+                                                255, 255, 255, 1),
+                                          ),
+                                          child: Stack(
+                                            children: <Widget>[
+                                              Positioned(
+                                                top: 15,
+                                                left: 12,
+                                                child: Image.asset(
+                                                  'assets/image/shapeImage.png',
+                                                  width: 40,
                                                 ),
                                               ),
-                                              onTap: AksesImage,
-                                            ))),
+                                              Positioned(
+                                                  top: 23,
+                                                  left: 65,
+                                                  child: Text(
+                                                    'Image',
+                                                    style:
+                                                        TextStyle(fontSize: 20),
+                                                  ))
+                                            ],
+                                          ),
+                                        ),
+                                        onTap: () async {
+                                          final aksesImage =
+                                              ('https://armoviefilm.000webhostapp.com/akses_image/akses_image.html');
+                                          openBrowserURL(
+                                              url: aksesImage, inApp: false);
+                                        })),
                                 // end bar 1
 
                                 Positioned(
