@@ -44,7 +44,7 @@ class HomeResponsive extends StatelessWidget {
     return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
       Container(
           margin: EdgeInsets.only(left: 20, top: 30),
-          width: 907,
+          width: MediaQuery.of(context).size.width,
           height: 800,
           child: Stack(children: <Widget>[
             PageView.builder(
@@ -125,278 +125,26 @@ class HomeResponsive extends StatelessWidget {
                 )),
               ],
             ),
-
-            // shape bar
             Center(
-                heightFactor: MediaQuery.of(context).size.height * 20,
-                child: Container(
-                  width: 300,
-                  height: 400,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        topRight: Radius.circular(20),
-                        bottomLeft: Radius.circular(20),
-                        bottomRight: Radius.circular(20),
-                      ),
-                      color: Color.fromRGBO(179, 232, 249, 1)),
-                  child: Stack(children: <Widget>[
-                    Container(
-                      margin: EdgeInsets.all(15),
-                      child: Stack(children: <Widget>[
-                        Container(
-                          child: Text(
-                            'FITUR',
-                            style: TextStyle(
-                                fontFamily: 'Poppins-bold', fontSize: 25),
-                          ),
+              child: Container(
+                margin: EdgeInsets.only(
+                  top: 350,
+                ),
+                child: Stack(children: [
+                  Column(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(right: 200),
+                        child: Text(
+                          " FITUR APLIKASI",
+                          style: TextStyle(fontFamily: 'Arial', fontSize: 15),
                         ),
-                        Container(
-                          margin: EdgeInsets.only(left: 80),
-                          width: MediaQuery.of(context).size.width * 0.3,
-                          height: 32,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(10),
-                                  topRight: Radius.circular(10),
-                                  bottomLeft: Radius.circular(10),
-                                  bottomRight: Radius.circular(10)),
-                              color: Color.fromARGB(253, 6, 247, 127)),
-                          child: Container(
-                              margin: EdgeInsets.only(top: 5),
-                              child: Text(
-                                'APLIKASI',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    color: Color.fromARGB(255, 255, 255, 255),
-                                    fontFamily: 'Poppins-Bold',
-                                    fontSize: 20),
-                              )),
-                        ),
-                      ]),
-                    ),
-                    Container(
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height,
-                      margin: EdgeInsets.only(top: 60, left: 22),
-                      child: Stack(
-                        children: <Widget>[
-                          Positioned(
-                              left: 0,
-                              child: InkWell(
-                                  child: Container(
-                                    width: 149,
-                                    height: 68,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(9),
-                                        topRight: Radius.circular(9),
-                                        bottomLeft: Radius.circular(9),
-                                        bottomRight: Radius.circular(9),
-                                      ),
-                                      color: Color.fromRGBO(255, 255, 255, 1),
-                                    ),
-                                    child: Stack(
-                                      children: <Widget>[
-                                        Positioned(
-                                          top: 15,
-                                          left: 12,
-                                          child: Image.asset(
-                                            'assets/image/shapeImage.png',
-                                            width: 40,
-                                          ),
-                                        ),
-                                        Positioned(
-                                            top: 23,
-                                            left: 65,
-                                            child: Text(
-                                              'Image',
-                                              style: TextStyle(fontSize: 20),
-                                            ))
-                                      ],
-                                    ),
-                                  ),
-                                  onTap: () async {
-                                    final aksesImage =
-                                        ('https://armoviefilm.000webhostapp.com/akses_image/akses_image.html');
-                                    openBrowserURL(
-                                        url: aksesImage, inApp: false);
-                                  })),
-                          // end bar 1
-
-                          Positioned(
-                              left: 0,
-                              top: 90,
-                              child: Link(
-                                target: LinkTarget.blank,
-                                uri: aksesAbsen,
-                                builder: (context, AksesAbsen) => InkWell(
-                                  child: Container(
-                                    width: 149,
-                                    height: 68,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(9),
-                                        topRight: Radius.circular(9),
-                                        bottomLeft: Radius.circular(9),
-                                        bottomRight: Radius.circular(9),
-                                      ),
-                                      color: Color.fromRGBO(255, 255, 255, 1),
-                                    ),
-                                    child: Stack(children: <Widget>[
-                                      Positioned(
-                                          top: 10,
-                                          left: 12,
-                                          child: Image.asset(
-                                            'assets/image/shapeImage3.png',
-                                            width: 40,
-                                          )),
-                                      Positioned(
-                                          top: 25,
-                                          left: 70,
-                                          child: Text(
-                                            'Absen',
-                                            style: TextStyle(fontSize: 20),
-                                          ))
-                                    ]),
-                                  ),
-                                  onTap: AksesAbsen,
-                                ),
-                              )),
-
-                          Positioned(
-                              top: 180,
-                              child: Link(
-                                  target: LinkTarget.blank,
-                                  uri: maps,
-                                  builder: (context, Maps) => InkWell(
-                                        child: Container(
-                                          width: 149,
-                                          height: 68,
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.only(
-                                              topLeft: Radius.circular(9),
-                                              topRight: Radius.circular(9),
-                                              bottomLeft: Radius.circular(9),
-                                              bottomRight: Radius.circular(9),
-                                            ),
-                                            color: Color.fromRGBO(
-                                                255, 255, 255, 1),
-                                          ),
-                                          child: Stack(children: <Widget>[
-                                            Positioned(
-                                                top: 5,
-                                                left: 10,
-                                                child: Image.asset(
-                                                  'assets/image/shapeImage5.png',
-                                                  width: 55,
-                                                )),
-                                            Positioned(
-                                              top: 25,
-                                              left: 80,
-                                              child: Text(
-                                                'Maps',
-                                                style: TextStyle(fontSize: 20),
-                                              ),
-                                            )
-                                          ]),
-                                        ),
-                                        onTap: Maps,
-                                      ))),
-
-                          // end bar 5
-
-                          Positioned(
-                              left: 180,
-                              child: Link(
-                                  target: LinkTarget.self,
-                                  uri: aksesTugas,
-                                  builder: (context, AksesTugas) => (InkWell(
-                                        child: Container(
-                                          width: 149,
-                                          height: 68,
-                                          decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.only(
-                                              topLeft: Radius.circular(9),
-                                              topRight: Radius.circular(9),
-                                              bottomLeft: Radius.circular(9),
-                                              bottomRight: Radius.circular(9),
-                                            ),
-                                            color: Color.fromRGBO(
-                                                255, 255, 255, 1),
-                                          ),
-                                          child: Stack(
-                                            children: <Widget>[
-                                              Positioned(
-                                                top: 10,
-                                                left: 15,
-                                                child: Image.asset(
-                                                  'assets/image/shapeImage2.png',
-                                                  width: 50,
-                                                ),
-                                              ),
-                                              Positioned(
-                                                  top: 25,
-                                                  left: 80,
-                                                  child: Text(
-                                                    'Tugas',
-                                                    style:
-                                                        TextStyle(fontSize: 20),
-                                                  ))
-                                            ],
-                                          ),
-                                        ),
-                                        onTap: AksesTugas,
-                                      )))),
-                          // end bar 2
-
-                          Positioned(
-                            left: 180,
-                            top: 90,
-                            child: InkWell(
-                              child: Container(
-                                width: 149,
-                                height: 68,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(9),
-                                    topRight: Radius.circular(9),
-                                    bottomLeft: Radius.circular(9),
-                                    bottomRight: Radius.circular(9),
-                                  ),
-                                  color: Color.fromRGBO(255, 255, 255, 1),
-                                ),
-                                child: Stack(children: <Widget>[
-                                  Positioned(
-                                      top: 10,
-                                      left: 20,
-                                      child: Image.asset(
-                                        'assets/image/shapeImage4.png',
-                                        width: 45,
-                                      )),
-                                  const Positioned(
-                                      top: 25,
-                                      left: 80,
-                                      child: Text(
-                                        'Cloud',
-                                        style: TextStyle(fontSize: 20),
-                                      ))
-                                ]),
-                              ),
-                              onTap: () => {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => AnimasiC()))
-                              },
-                            ),
-                          ),
-                          // end bar 4
-                        ],
-                      ),
-                    )
-                  ]),
-                )) // shape text
+                      )
+                    ],
+                  )
+                ]),
+              ),
+            )
           ])),
     ]);
   }
