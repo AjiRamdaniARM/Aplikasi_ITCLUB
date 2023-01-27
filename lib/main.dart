@@ -1,6 +1,8 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:app_it/Tentang.dart';
 import 'package:app_it/animasi/animasicontact.dart';
+import 'package:app_it/responsive.dart';
+import 'package:app_it/responsive/mobile/homeresponsive.dart';
 import 'package:flutter/material.dart';
 import 'package:app_it/splash_screen.dart';
 import 'package:url_launcher/link.dart';
@@ -119,7 +121,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ))),
         body: SingleChildScrollView(
-            child: Container(
+            child: SafeArea(
+          child: Responsive(
+            tablet: Container(
                 margin: EdgeInsets.only(left: 20, top: 30),
                 width: 907,
                 height: 800,
@@ -144,64 +148,71 @@ class _MyHomePageState extends State<MyHomePage> {
                               ]),
                             ));
                       }),
-                  Positioned(
-                    top: 25,
-                    left: 250,
-                    width: 130,
-                    child: Image.asset('assets/image/logo.png'),
-                  ),
-                  Positioned(
-                      top: 49,
-                      left: 5,
-                      child: Text(
-                        'Selamat Datang,',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                            color: Color.fromRGBO(111, 109, 109, 1),
-                            fontFamily: 'Inter',
-                            fontSize: 24,
-                            letterSpacing:
-                                0 /*percentages not used in flutter. defaulting to zero*/,
-                            fontWeight: FontWeight.normal,
-                            height: 1),
+                  Row(
+                    textDirection: TextDirection.rtl,
+                    children: <Widget>[
+                      Container(
+                        width: 100,
+                        child: Image.asset('assets/image/logo.png'),
+                      ),
+                      Expanded(
+                          child: Container(
+                        child: Stack(children: [
+                          FittedBox(
+                            child: Stack(children: [
+                              Container(
+                                child: Text(
+                                  'Selamat Datang',
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      color: Color.fromRGBO(111, 109, 109, 1),
+                                      letterSpacing: 1),
+                                ),
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(top: 25),
+                                child: GradientText(
+                                  'IT CLUB LOVERS',
+                                  style: TextStyle(
+                                      fontFamily: 'Valken',
+                                      fontSize: 30,
+                                      letterSpacing:
+                                          0 /*pesrcentages not used in flutter. defaulting to zero*/,
+                                      fontWeight: FontWeight.normal,
+                                      height: 1),
+                                  colors: [
+                                    Colors.blue,
+                                    Color.fromARGB(255, 0, 187, 255)
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(top: 55),
+                                child: AnimatedTextKit(
+                                  animatedTexts: [
+                                    FadeAnimatedText(
+                                      'SMKS TERPADU IBAADURRAHMAN',
+                                      textStyle: TextStyle(),
+                                    ),
+                                    FadeAnimatedText(
+                                      'SMKS PARIWISATA PERCIK MADANI',
+                                    ),
+                                  ],
+                                  repeatForever: true,
+                                ),
+                              )
+                            ]),
+                          )
+                        ]),
                       )),
-                  Positioned(
-                    top: 110,
-                    left: 5,
-                    child: AnimatedTextKit(
-                      animatedTexts: [
-                        FadeAnimatedText(
-                          'SMKS TERPADU IBAADURRAHMAN',
-                          textStyle: TextStyle(),
-                        ),
-                        FadeAnimatedText(
-                          'SMKS PARIWISATA PERCIK MADANI',
-                        ),
-                      ],
-                      repeatForever: true,
-                    ),
+                    ],
                   ),
-                  Positioned(
-                      top: 75,
-                      left: 0,
-                      child: GradientText(
-                        'IT CLUB LOVERS',
-                        style: TextStyle(
-                            fontFamily: 'Valken',
-                            fontSize: 30,
-                            letterSpacing:
-                                0 /*pesrcentages not used in flutter. defaulting to zero*/,
-                            fontWeight: FontWeight.normal,
-                            height: 1),
-                        colors: [Colors.blue, Color.fromARGB(255, 0, 187, 255)],
-                      )),
 
                   // shape bar
-                  Positioned(
-                      top: 360,
-                      left: 2,
+                  Center(
+                      heightFactor: 8,
                       child: Container(
-                        width: 375,
+                        width: 300,
                         height: 400,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.only(
@@ -483,6 +494,9 @@ class _MyHomePageState extends State<MyHomePage> {
                           )
                         ]),
                       )) // shape text
-                ]))));
+                ])),
+            mobile: HomeResponsive(),
+          ),
+        )));
   }
 }

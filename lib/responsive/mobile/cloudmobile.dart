@@ -229,7 +229,7 @@ class CloudMobile extends StatelessWidget {
                                             child: FittedBox(
                                               fit: BoxFit.fill,
                                               child: Text(
-                                                'Karya It',
+                                                'Karya IT Club',
                                                 style: TextStyle(
                                                     fontSize: 100,
                                                     color: Color.fromARGB(
