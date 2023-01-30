@@ -494,7 +494,8 @@ class _MyHomePageState extends State<MyHomePage> {
                           )
                         ]),
                       )) // shape text
-                ])),
+                ])
+                ),
             mobile: HomeResponsive(),
           ),
         )));
