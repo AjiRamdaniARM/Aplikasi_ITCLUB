@@ -2,6 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:app_it/Tentang.dart';
 import 'package:app_it/animasi/animasicontact.dart';
 import 'package:app_it/responsive.dart';
+import 'package:app_it/responsive/mobile/cloudmobile.dart';
 import 'package:app_it/responsive/mobile/homeresponsive.dart';
 import 'package:flutter/material.dart';
 import 'package:app_it/splash_screen.dart';
@@ -45,27 +46,8 @@ class HomeResponsive extends StatelessWidget {
       Container(
           margin: EdgeInsets.only(left: 20, top: 30),
           width: MediaQuery.of(context).size.width,
-          height: 800,
+          height: 700,
           child: Stack(children: <Widget>[
-            PageView.builder(
-                itemCount: 2,
-                pageSnapping: true,
-                itemBuilder: (context, pagePosition) {
-                  return Container(
-                      margin: EdgeInsets.only(top: 150.0),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                        child: Stack(children: <Widget>[
-                          Container(
-                            margin: const EdgeInsets.all(20),
-                            child: Image(
-                              width: 10000.0,
-                              image: AssetImage(images[pagePosition]),
-                            ),
-                          ),
-                        ]),
-                      ));
-                }),
             Row(
               textDirection: TextDirection.rtl,
               children: <Widget>[
@@ -125,26 +107,192 @@ class HomeResponsive extends StatelessWidget {
                 )),
               ],
             ),
-            Center(
-              child: Container(
+            PageView.builder(
+                itemCount: 2,
+                pageSnapping: true,
+                itemBuilder: (context, pagePosition) {
+                  return Container(
+                      margin: EdgeInsets.only(top: 100.0),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                        child: Stack(children: <Widget>[
+                          Container(
+                            margin: const EdgeInsets.all(20),
+                            child: Image(
+                              width: 10000.0,
+                              image: AssetImage(images[pagePosition]),
+                            ),
+                          ),
+                        ]),
+                      ));
+                }),
+            FittedBox(
+              child: Center(
+                  child: Container(
                 margin: EdgeInsets.only(
-                  top: 350,
+                  top: 290,
                 ),
-                child: Stack(children: [
-                  Column(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(right: 200),
-                        child: Text(
-                          " FITUR APLIKASI",
-                          style: TextStyle(fontFamily: 'Arial', fontSize: 15),
+                width: 353,
+                height: MediaQuery.of(context).size.width,
+                child: Stack(
+                  children: <Widget>[
+                    Column(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.all(8),
+                          child: Text(
+                            "Fitur Aplikasi",
+                            style: TextStyle(
+                                fontFamily: 'Poppins-Bold', fontSize: 22),
+                          ),
                         ),
-                      )
-                    ],
-                  )
-                ]),
-              ),
-            )
+                        Container(
+                          margin: EdgeInsets.all(10),
+                          child: Stack(children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                InkWell(
+                                  onTap: () async {
+                                    final image =
+                                        "https://armoviefilm.000webhostapp.com/akses_image/akses_image.html";
+                                    openBrowserURL(url: image, inApp: false);
+                                  },
+                                  child: Container(
+                                    child: Stack(children: [
+                                      Container(
+                                        width: 50,
+                                        child: Image.asset(
+                                            'assets/image/shapeImage.png'),
+                                      ),
+                                      FittedBox(
+                                        child: Center(
+                                            heightFactor: 7,
+                                            child: Text(
+                                              'Image',
+                                              style: TextStyle(fontSize: 19),
+                                            )),
+                                      )
+                                    ]),
+                                  ),
+                                ),
+                                InkWell(
+                                  onTap: () => {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: ((context) => AnimasiC())))
+                                  },
+                                  child: Container(
+                                    child: Stack(children: [
+                                      Container(
+                                        width: 50,
+                                        child: Image.asset(
+                                            'assets/image/shapeImage4.png'),
+                                      ),
+                                      FittedBox(
+                                        child: Center(
+                                            heightFactor: 7,
+                                            child: Text(
+                                              'Cloud',
+                                              style: TextStyle(fontSize: 19),
+                                            )),
+                                      )
+                                    ]),
+                                  ),
+                                ),
+                                InkWell(
+                                  onTap: () async {
+                                    final absen =
+                                        "https://forms.gle/5gb61j32YrZLKFiq9";
+                                    openBrowserURL(url: absen, inApp: false);
+                                  },
+                                  child: Container(
+                                    child: Stack(children: [
+                                      Container(
+                                        width: 50,
+                                        child: Image.asset(
+                                            'assets/image/shapeImage5.png'),
+                                      ),
+                                      FittedBox(
+                                        child: Center(
+                                            heightFactor: 7,
+                                            child: Text(
+                                              'Absen',
+                                              style: TextStyle(fontSize: 19),
+                                            )),
+                                      )
+                                    ]),
+                                  ),
+                                ),
+                                InkWell(
+                                  onTap: () async {
+                                    final search =
+                                        "https://wikipedia-searchengine.web.app/";
+                                    openBrowserURL(url: search, inApp: true);
+                                  },
+                                  child: Container(
+                                    child: Stack(children: [
+                                      Container(
+                                        width: 50,
+                                        child: Image.asset(
+                                            'assets/image/shapeImage3.png'),
+                                      ),
+                                      FittedBox(
+                                        child: Center(
+                                            heightFactor: 7,
+                                            child: Text(
+                                              'Search',
+                                              style: TextStyle(fontSize: 19),
+                                            )),
+                                      )
+                                    ]),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(top: 100, left: 20),
+                              child: InkWell(
+                                onTap: () async {
+                                  final maps =
+                                      "https://maps.app.goo.gl/FGJSFggm5LifB4St7";
+                                  openBrowserURL(url: maps, inApp: false);
+                                },
+                                child: Container(
+                                  child: Stack(children: [
+                                    Container(
+                                      width: 50,
+                                      child: Image.asset('assets/image/c3.png'),
+                                    ),
+                                    FittedBox(
+                                      child: Center(
+                                          heightFactor: 7,
+                                          child: Text(
+                                            'Maps',
+                                            style: TextStyle(fontSize: 19),
+                                          )),
+                                    )
+                                  ]),
+                                ),
+                              ),
+                            )
+                          ]),
+                        ),
+                        Container(
+                          margin: EdgeInsets.all(8),
+                          child: Text(
+                            "Berita Terkini",
+                            style: TextStyle(
+                                fontFamily: 'Poppins-Bold', fontSize: 22),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              )),
+            ),
           ])),
     ]);
   }

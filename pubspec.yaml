@@ -27,16 +27,17 @@ flutter:
     - assets/image/logo.png
     - assets/image/bg1.png
     - assets/image/bg2.png
-    - assets/image/shapeImage.png
-    - assets/image/shapeImage2.png
-    - assets/image/shapeImage3.png
-    - assets/image/shapeImage4.png
-    - assets/image/shapeImage5.png
+
     - assets/image/Home.png
     - assets/image/Contact.png
     - assets/image/Profile.png
     - assets/image/Back.png
     - assets/image/TT.png
+    - assets/image/shapeImage3.png
+    - assets/image/c3.png
+    - assets/image/shapeImage5.png
+    - assets/image/shapeImage4.png
+    - assets/image/shapeImage.png
     - assets/image/Yt.png
     - assets/image/Ig.png
     - assets/image/folder.webp
