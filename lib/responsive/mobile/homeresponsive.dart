@@ -291,7 +291,36 @@ class HomeResponsive extends StatelessWidget {
                           child: Column(children: [
                             Container(
                               width: MediaQuery.of(context).size.width * 0.9,
-                              height: 100,
+                              height: 80,
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 0.4, vertical: 2),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(8),
+                                    topRight: Radius.circular(8),
+                                    bottomLeft: Radius.circular(8),
+                                    bottomRight: Radius.circular(8),
+                                  ),
+                                  border: Border.all(
+                                      color: Color.fromRGBO(0, 0, 0, 1))),
+                            ),
+                            Container(
+                              width: MediaQuery.of(context).size.width * 0.9,
+                              height: 80,
+                              margin: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(8),
+                                    topRight: Radius.circular(8),
+                                    bottomLeft: Radius.circular(8),
+                                    bottomRight: Radius.circular(8),
+                                  ),
+                                  border: Border.all(
+                                      color: Color.fromRGBO(0, 0, 0, 1))),
+                            ),
+                            Container(
+                              width: MediaQuery.of(context).size.width * 0.9,
+                              height: 80,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(8),

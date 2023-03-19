@@ -32,29 +32,84 @@ class Api_Wa extends StatelessWidget {
     }
 
     String api =
-        ("https://api.whatsapp.com/send?phone=6289657739017&text=Assalamualaikum ibu, Saya%20${nama}%20${pesan}");
+        ("https://api.whatsapp.com/send?phone=6289657739017&text=Assalamualaikum ibu, Saya%20${nama},%20${pesan}");
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Detail Page"),
-      ),
       body: Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           //menampilkan nama
-
-          Text('Apakah anda yaking ingin mengrim pesannya?'),
-          InkWell(
-            onTap: () async {
-              final convert = api;
-              openBrowserURL(url: convert, inApp: false);
-            },
-            child: Container(
-                width: 50,
-                height: 20,
-                color: Colors.blue,
-                child: Text('Kirim')),
+          Lottie.network(
+              'https://assets8.lottiefiles.com/packages/lf20_yfusyzym.json'),
+          Container(
+            child: Text('Yakin Mau Ngirim Pesan ?'),
+          ),
+          Container(
+            margin: EdgeInsets.all(40),
+            child: Row(
+              children: [
+                InkWell(
+                  onTap: () => {Navigator.pop(context)},
+                  child: Container(
+                      margin: EdgeInsets.all(10),
+                      width: 140,
+                      height: 60,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(30.5),
+                            topRight: Radius.circular(30.5),
+                            bottomLeft: Radius.circular(30.5),
+                            bottomRight: Radius.circular(30.5),
+                          ),
+                          color: Colors.red),
+                      child: Center(
+                        child: Text(
+                          "Gak Jadi Deh",
+                          style: TextStyle(
+                              fontFamily: 'Poppins-Bold', color: Colors.white),
+                        ),
+                      )),
+                ),
+                InkWell(
+                  onTap: () async {
+                    final convert = api;
+                    openBrowserURL(url: convert, inApp: false);
+                  },
+                  child: Container(
+                      width: 140,
+                      height: 60,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(30.5),
+                            topRight: Radius.circular(30.5),
+                            bottomLeft: Radius.circular(30.5),
+                            bottomRight: Radius.circular(30.5),
+                          ),
+                          color: Color.fromARGB(255, 54, 244, 79)),
+                      child: Center(
+                        child: Text(
+                          "Yakin Lah",
+                          style: TextStyle(
+                              fontFamily: 'Poppins-Bold', color: Colors.white),
+                        ),
+                      )),
+                ),
+              ],
+            ),
           )
+
+          // Text('Apakah anda yaking ingin mengrim pesannya?'),
+          // InkWell(
+          //   onTap: () async {
+          //     final convert = api;
+          //     openBrowserURL(url: convert, inApp: false);
+          //   },
+          //   child: Container(
+          //       width: 50,
+          //       height: 20,
+          //       color: Colors.blue,
+          //       child: Text('Kirim')),
+          // )
         ],
       )),
     );
