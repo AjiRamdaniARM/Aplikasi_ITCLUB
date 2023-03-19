@@ -46,7 +46,7 @@ class HomeResponsive extends StatelessWidget {
       Container(
           margin: EdgeInsets.only(left: 20, top: 30),
           width: MediaQuery.of(context).size.width,
-          height: 700,
+          height: 900,
           child: Stack(children: <Widget>[
             Row(
               textDirection: TextDirection.rtl,
@@ -282,11 +282,28 @@ class HomeResponsive extends StatelessWidget {
                         Container(
                           margin: EdgeInsets.all(8),
                           child: Text(
-                            "Berita Terkini",
+                            "Lainnya",
                             style: TextStyle(
                                 fontFamily: 'Poppins-Bold', fontSize: 22),
                           ),
                         ),
+                        FittedBox(
+                          child: Column(children: [
+                            Container(
+                              width: MediaQuery.of(context).size.width * 0.9,
+                              height: 100,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(8),
+                                    topRight: Radius.circular(8),
+                                    bottomLeft: Radius.circular(8),
+                                    bottomRight: Radius.circular(8),
+                                  ),
+                                  border: Border.all(
+                                      color: Color.fromRGBO(0, 0, 0, 1))),
+                            )
+                          ]),
+                        )
                       ],
                     ),
                   ],

@@ -1,3 +1,4 @@
+import 'package:app_it/Home.dart';
 import "package:flutter/material.dart";
 import 'package:app_it/Cloud.dart';
 import 'package:lottie/lottie.dart';
@@ -88,10 +89,8 @@ class CloudMobile extends StatelessWidget {
                                   fontSize: 20),
                             )),
                         onTap: () => {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => MyHomePage()))
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Home()))
                         },
                       ),
                     ],

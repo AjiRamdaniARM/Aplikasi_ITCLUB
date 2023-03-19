@@ -40,12 +40,7 @@ class _AnimasiC extends State<AnimasiC> with TickerProviderStateMixin {
             ..duration = compos.duration
             ..forward().then((value) {
               Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => Cloud(
-                            title: title,
-                            desc: desc,
-                          )));
+                  context, MaterialPageRoute(builder: (context) => Cloud()));
             });
         }),
         Container(

@@ -1,3 +1,4 @@
+import 'package:app_it/Home.dart';
 import 'package:app_it/Tentang.dart';
 import 'package:app_it/responsive.dart';
 import 'package:app_it/responsive/mobile/cloudmobile.dart';
@@ -19,9 +20,6 @@ final Uri mtlogo = Uri.parse(
 
 class Cloud extends StatelessWidget {
   //constructor
-  Cloud({required this.title, required this.desc});
-  String title;
-  String desc;
 
   @override
   Widget build(BuildContext context) {
@@ -85,10 +83,8 @@ class Cloud extends StatelessWidget {
                                     fontSize: 20),
                               )),
                           onTap: () => {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => MyHomePage()))
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) => Home()))
                           },
                         ),
                       ],

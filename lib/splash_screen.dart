@@ -1,6 +1,8 @@
+import 'package:app_it/Home.dart';
 import 'package:flutter/material.dart';
 import 'package:app_it/main.dart';
 import 'package:lottie/lottie.dart';
+import 'package:app_it/nav.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
@@ -46,8 +48,8 @@ class _SplashScreenState extends State<SplashScreen>
           _controller
             ..duration = compos.duration
             ..forward().then((value) {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => MyHomePage()));
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Navbar()));
             });
         }),
         Container(
