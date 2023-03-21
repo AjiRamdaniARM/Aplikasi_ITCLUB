@@ -133,7 +133,6 @@ class HomeResponsive extends StatelessWidget {
                   top: 290,
                 ),
                 width: 353,
-                height: MediaQuery.of(context).size.width,
                 child: Stack(
                   children: <Widget>[
                     Column(
@@ -251,31 +250,114 @@ class HomeResponsive extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            Container(
-                              margin: EdgeInsets.only(top: 100, left: 20),
-                              child: InkWell(
-                                onTap: () async {
-                                  final maps =
-                                      "https://maps.app.goo.gl/FGJSFggm5LifB4St7";
-                                  openBrowserURL(url: maps, inApp: false);
-                                },
-                                child: Container(
-                                  child: Stack(children: [
-                                    Container(
-                                      width: 50,
-                                      child: Image.asset('assets/image/c3.png'),
-                                    ),
-                                    FittedBox(
-                                      child: Center(
-                                          heightFactor: 7,
-                                          child: Text(
-                                            'Maps',
-                                            style: TextStyle(fontSize: 19),
-                                          )),
-                                    )
-                                  ]),
+                            Row(
+                              children: [
+                                Container(
+                                  margin: EdgeInsets.only(top: 100, left: 20),
+                                  child: InkWell(
+                                    onTap: () async {
+                                      final article =
+                                          "https://articleberita.blogspot.com/";
+                                      openBrowserURL(url: article, inApp: true);
+                                    },
+                                    child: Container(
+                                        child: Stack(children: [
+                                      Container(
+                                        width: 50,
+                                        child: Image.network(
+                                            'https://cdn-icons-png.flaticon.com/512/10036/10036759.png'),
+                                      ),
+                                      FittedBox(
+                                        child: Center(
+                                            heightFactor: 7,
+                                            child: Text(
+                                              'Article',
+                                              style: TextStyle(fontSize: 19),
+                                            )),
+                                      )
+                                    ])),
+                                  ),
                                 ),
-                              ),
+                                Container(
+                                  margin: EdgeInsets.only(top: 100, left: 20),
+                                  child: InkWell(
+                                    onTap: () async {
+                                      final maps = "https://quizizz.com/join";
+                                      openBrowserURL(url: maps, inApp: true);
+                                    },
+                                    child: Container(
+                                        child: Stack(children: [
+                                      Container(
+                                        width: 50,
+                                        child: Image.network(
+                                            'https://cdn-icons-png.flaticon.com/512/2641/2641457.png'),
+                                      ),
+                                      FittedBox(
+                                        child: Center(
+                                            heightFactor: 7,
+                                            child: Text(
+                                              ' Quiz',
+                                              style: TextStyle(fontSize: 19),
+                                            )),
+                                      )
+                                    ])),
+                                  ),
+                                ),
+                                Container(
+                                  margin: EdgeInsets.only(top: 100, left: 20),
+                                  child: InkWell(
+                                    onTap: () async {
+                                      final anggota =
+                                          "https://armoviefilm.000webhostapp.com/akses_anggota/akses_anggota.html";
+                                      openBrowserURL(
+                                          url: anggota, inApp: false);
+                                    },
+                                    child: Container(
+                                        child: Stack(children: [
+                                      Container(
+                                        width: 60,
+                                        child: Image.network(
+                                            'https://cdn-icons-png.flaticon.com/512/10105/10105814.png'),
+                                      ),
+                                      FittedBox(
+                                        child: Center(
+                                            heightFactor: 7,
+                                            child: Text(
+                                              'Anggota',
+                                              style: TextStyle(fontSize: 19),
+                                            )),
+                                      )
+                                    ])),
+                                  ),
+                                ),
+                                Container(
+                                  margin: EdgeInsets.only(top: 100, left: 20),
+                                  child: InkWell(
+                                    onTap: () async {
+                                      final maps =
+                                          "https://maps.app.goo.gl/FGJSFggm5LifB4St7";
+                                      openBrowserURL(url: maps, inApp: false);
+                                    },
+                                    child: Container(
+                                      child: Stack(children: [
+                                        Container(
+                                          width: 50,
+                                          child: Image.asset(
+                                              'assets/image/c3.png'),
+                                        ),
+                                        FittedBox(
+                                          child: Center(
+                                              heightFactor: 7,
+                                              child: Text(
+                                                'Maps',
+                                                style: TextStyle(fontSize: 19),
+                                              )),
+                                        )
+                                      ]),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             )
                           ]),
                         ),
@@ -287,50 +369,44 @@ class HomeResponsive extends StatelessWidget {
                                 fontFamily: 'Poppins-Bold', fontSize: 22),
                           ),
                         ),
-                        FittedBox(
+                        Center(
                           child: Column(children: [
-                            Container(
-                              width: MediaQuery.of(context).size.width * 0.9,
-                              height: 80,
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 0.4, vertical: 2),
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(8),
-                                    topRight: Radius.circular(8),
-                                    bottomLeft: Radius.circular(8),
-                                    bottomRight: Radius.circular(8),
-                                  ),
-                                  border: Border.all(
-                                      color: Color.fromRGBO(0, 0, 0, 1))),
+                            InkWell(
+                              onTap: () async {
+                                final tiktok =
+                                    'https://www.tiktok.com/@itclub1?_t=8YWcjztUc1B&_r=1';
+                                openBrowserURL(url: tiktok, inApp: false);
+                              },
+                              child: Container(
+                                  margin: EdgeInsets.symmetric(
+                                      vertical: 2, horizontal: 2),
+                                  child: Image.asset(
+                                      'assets/image/image-medsos/tiktok.png')),
                             ),
-                            Container(
-                              width: MediaQuery.of(context).size.width * 0.9,
-                              height: 80,
-                              margin: EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(8),
-                                    topRight: Radius.circular(8),
-                                    bottomLeft: Radius.circular(8),
-                                    bottomRight: Radius.circular(8),
-                                  ),
-                                  border: Border.all(
-                                      color: Color.fromRGBO(0, 0, 0, 1))),
+                            InkWell(
+                              onTap: () async {
+                                final instagram =
+                                    'https://www.instagram.com/itclubsmkti/';
+                                openBrowserURL(url: instagram, inApp: false);
+                              },
+                              child: Container(
+                                  margin: EdgeInsets.symmetric(
+                                      vertical: 2, horizontal: 2),
+                                  child: Image.asset(
+                                      'assets/image/image-medsos/instagram.png')),
                             ),
-                            Container(
-                              width: MediaQuery.of(context).size.width * 0.9,
-                              height: 80,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(8),
-                                    topRight: Radius.circular(8),
-                                    bottomLeft: Radius.circular(8),
-                                    bottomRight: Radius.circular(8),
-                                  ),
-                                  border: Border.all(
-                                      color: Color.fromRGBO(0, 0, 0, 1))),
-                            )
+                            InkWell(
+                              onTap: () async {
+                                final youtube =
+                                    'https://www.youtube.com/@itclub_smkti4962';
+                                openBrowserURL(url: youtube, inApp: false);
+                              },
+                              child: Container(
+                                  margin: EdgeInsets.symmetric(
+                                      vertical: 2, horizontal: 2),
+                                  child: Image.asset(
+                                      'assets/image/image-medsos/yotube.png')),
+                            ),
                           ]),
                         )
                       ],

@@ -1,5 +1,6 @@
 import 'package:app_it/Home.dart';
 import 'package:app_it/Tentang.dart';
+import 'package:app_it/nav.dart';
 import 'package:app_it/responsive.dart';
 import 'package:app_it/responsive/mobile/cloudmobile.dart';
 import 'package:flutter/material.dart';
@@ -83,8 +84,10 @@ class Cloud extends StatelessWidget {
                                     fontSize: 20),
                               )),
                           onTap: () => {
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context) => Home()))
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Navbar()))
                           },
                         ),
                       ],

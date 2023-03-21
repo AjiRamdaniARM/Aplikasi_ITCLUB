@@ -46,6 +46,9 @@ flutter:
     - assets/image/Wa.webp
     - assets/image/logo2.webp
     - assets/image/folder.webp
+    - assets/image/image-medsos/tiktok.png
+    - assets/image/image-medsos/instagram.png
+    - assets/image/image-medsos/yotube.png
 
   fonts:
     - family: Valken
