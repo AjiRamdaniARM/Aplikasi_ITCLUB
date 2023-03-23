@@ -1,5 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:app_it/Tentang.dart';
+
 import 'package:app_it/animasi/animasicontact.dart';
 import 'package:app_it/responsive.dart';
 import 'package:app_it/responsive/mobile/cloudmobile.dart';
@@ -369,46 +369,49 @@ class HomeResponsive extends StatelessWidget {
                                 fontFamily: 'Poppins-Bold', fontSize: 22),
                           ),
                         ),
-                        Center(
-                          child: Column(children: [
-                            InkWell(
-                              onTap: () async {
-                                final tiktok =
-                                    'https://www.tiktok.com/@itclub1?_t=8YWcjztUc1B&_r=1';
-                                openBrowserURL(url: tiktok, inApp: false);
-                              },
-                              child: Container(
-                                  margin: EdgeInsets.symmetric(
-                                      vertical: 2, horizontal: 2),
-                                  child: Image.asset(
-                                      'assets/image/image-medsos/tiktok.png')),
-                            ),
-                            InkWell(
-                              onTap: () async {
-                                final instagram =
-                                    'https://www.instagram.com/itclubsmkti/';
-                                openBrowserURL(url: instagram, inApp: false);
-                              },
-                              child: Container(
-                                  margin: EdgeInsets.symmetric(
-                                      vertical: 2, horizontal: 2),
-                                  child: Image.asset(
-                                      'assets/image/image-medsos/instagram.png')),
-                            ),
-                            InkWell(
-                              onTap: () async {
-                                final youtube =
-                                    'https://www.youtube.com/@itclub_smkti4962';
-                                openBrowserURL(url: youtube, inApp: false);
-                              },
-                              child: Container(
-                                  margin: EdgeInsets.symmetric(
-                                      vertical: 2, horizontal: 2),
-                                  child: Image.asset(
-                                      'assets/image/image-medsos/yotube.png')),
-                            ),
-                          ]),
-                        )
+                        Container(
+                            margin: EdgeInsets.all(10),
+                            child: Center(
+                              child: Column(children: [
+                                InkWell(
+                                  onTap: () async {
+                                    final tiktok =
+                                        'https://www.tiktok.com/@itclub1?_t=8YWcjztUc1B&_r=1';
+                                    openBrowserURL(url: tiktok, inApp: false);
+                                  },
+                                  child: Container(
+                                      margin: EdgeInsets.symmetric(
+                                          vertical: 2, horizontal: 2),
+                                      child: Image.asset(
+                                          'assets/image/image-medsos/tiktok.png')),
+                                ),
+                                InkWell(
+                                  onTap: () async {
+                                    final instagram =
+                                        'https://www.instagram.com/itclubsmkti/';
+                                    openBrowserURL(
+                                        url: instagram, inApp: false);
+                                  },
+                                  child: Container(
+                                      margin: EdgeInsets.symmetric(
+                                          vertical: 2, horizontal: 2),
+                                      child: Image.asset(
+                                          'assets/image/image-medsos/instagram.png')),
+                                ),
+                                InkWell(
+                                  onTap: () async {
+                                    final youtube =
+                                        'https://www.youtube.com/@itclub_smkti4962';
+                                    openBrowserURL(url: youtube, inApp: false);
+                                  },
+                                  child: Container(
+                                      margin: EdgeInsets.symmetric(
+                                          vertical: 2, horizontal: 2),
+                                      child: Image.asset(
+                                          'assets/image/image-medsos/yotube.png')),
+                                ),
+                              ]),
+                            )),
                       ],
                     ),
                   ],

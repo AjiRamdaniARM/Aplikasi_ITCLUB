@@ -1,5 +1,5 @@
 import 'package:app_it/Home.dart';
-import 'package:app_it/Tentang.dart';
+
 import 'package:app_it/nav.dart';
 import 'package:app_it/responsive.dart';
 import 'package:app_it/responsive/mobile/cloudmobile.dart';

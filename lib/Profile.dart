@@ -4,7 +4,7 @@ import 'package:app_it/responsive/mobile/homeresponsive.dart';
 import 'package:app_it/responsive/mobile/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:app_it/main.dart';
-import 'package:app_it/Tentang.dart';
+
 import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -228,10 +228,7 @@ class ProfileIt extends StatelessWidget {
                           )),
                     ]),
                   ),
-                  onTap: () => {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Tentangit()))
-                  },
+                  onTap: () => {},
                 )),
             // akhir tentang
             // daftar bantuan

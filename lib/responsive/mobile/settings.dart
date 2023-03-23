@@ -1,6 +1,8 @@
+import 'package:app_it/responsive/mobile/homeresponsive.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:lottie/lottie.dart';
 
 class Settings extends StatelessWidget {
   const Settings({
@@ -28,7 +30,7 @@ class Settings extends StatelessWidget {
         Container(
           margin: EdgeInsets.all(10),
           width: MediaQuery.of(context).size.width,
-          height: 900,
+          height: MediaQuery.of(context).size.width * 2.2,
           child: Stack(children: <Widget>[
             Container(
                 height: 100,
@@ -44,12 +46,15 @@ class Settings extends StatelessWidget {
                 )),
             Column(
               children: [
-                Container(
-                  padding: EdgeInsets.only(top: 80, right: 250),
-                  margin: EdgeInsets.all(10),
-                  child: Text(
-                    'Account',
-                    style: TextStyle(fontFamily: 'Poppins-Bold', fontSize: 20),
+                FittedBox(
+                  child: Container(
+                    padding: EdgeInsets.only(top: 80, right: 250),
+                    margin: EdgeInsets.all(10),
+                    child: Text(
+                      'Account',
+                      style:
+                          TextStyle(fontFamily: 'Poppins-Bold', fontSize: 20),
+                    ),
                   ),
                 ),
 
@@ -75,10 +80,27 @@ class Settings extends StatelessWidget {
                       )),
                 ),
                 InkWell(
-                  onTap: () async {
-                    final develop = 'https://portofolio-3c1ab.web.app/';
-                    openBrowserURL(url: develop, inApp: false);
-                  },
+                  onTap: () => showDialog<String>(
+                    context: context,
+                    builder: (BuildContext context) => AlertDialog(
+                      title: const Text(
+                        'Tentang IT CLUB',
+                        style: TextStyle(fontFamily: 'Poppins-Bold'),
+                      ),
+                      content: Row(
+                        children: [
+                          Container(
+                            width: 200,
+                            child: Text(
+                              'IT CLUB adalah Extrakulikuler yang ada disekolah smk terpadu ibadurrahman dan smk parawisata percik madani dimana eskul ini berpokus pada teknologi dan informatika yang memiliki tujuan untuk membantu siswa dan siswi manambah wawasan dan ilmu dibidang tersebut',
+                              style: TextStyle(
+                                  fontFamily: 'Robotto', letterSpacing: 0.5),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
                   child: Container(
                       margin: EdgeInsets.all(19),
                       child: Row(
@@ -96,7 +118,8 @@ class Settings extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () async {
-                    final develop = 'https://portofolio-3c1ab.web.app/';
+                    final develop =
+                        'https://www.instagram.com/smk_terpadu_ibaadurrahman/';
                     openBrowserURL(url: develop, inApp: false);
                   },
                   child: Container(
@@ -114,19 +137,22 @@ class Settings extends StatelessWidget {
                         ],
                       )),
                 ),
-                Container(
-                  padding: EdgeInsets.only(top: 40, right: 250),
-                  margin: EdgeInsets.all(10),
-                  child: Text(
-                    'Help',
-                    style: TextStyle(fontFamily: 'Poppins-Bold', fontSize: 20),
+                FittedBox(
+                  child: Container(
+                    padding: EdgeInsets.only(top: 40, right: 250),
+                    margin: EdgeInsets.all(10),
+                    child: Text(
+                      'Help',
+                      style:
+                          TextStyle(fontFamily: 'Poppins-Bold', fontSize: 20),
+                    ),
                   ),
                 ),
 
                 // button developer
                 InkWell(
                   onTap: () async {
-                    final develop = 'https://portofolio-3c1ab.web.app/';
+                    final develop = 'https://wa.link/75x7oi';
                     openBrowserURL(url: develop, inApp: false);
                   },
                   child: Container(
@@ -145,10 +171,32 @@ class Settings extends StatelessWidget {
                       )),
                 ),
                 InkWell(
-                  onTap: () async {
-                    final develop = 'https://portofolio-3c1ab.web.app/';
-                    openBrowserURL(url: develop, inApp: false);
-                  },
+                  onTap: () => showDialog<String>(
+                    context: context,
+                    builder: (BuildContext context) => AlertDialog(
+                      title: const Text(
+                        'Aplikasi ITC Lovers',
+                        style: TextStyle(fontFamily: 'Poppins-Bold'),
+                      ),
+                      content: Row(
+                        children: [
+                          Container(
+                            width: 50,
+                            child: Lottie.network(
+                                'https://assets2.lottiefiles.com/packages/lf20_hfwtjq7y.json'),
+                          ),
+                          Container(
+                            width: 200,
+                            child: Text(
+                              'Aplikasi ini berbasis Android !! Not Support IOS,DESKTOP , TABLET',
+                              style: TextStyle(
+                                  fontFamily: 'Robotto', letterSpacing: 0.5),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
                   child: Container(
                       margin: EdgeInsets.all(19),
                       child: Row(
@@ -175,7 +223,60 @@ class Settings extends StatelessWidget {
                   ),
                 ),
                 InkWell(
-                    onTap: () {},
+                    onTap: () => showDialog<String>(
+                          context: context,
+                          builder: (BuildContext context) => AlertDialog(
+                            title: const Text(
+                              'Form Pendaftaran',
+                              style: TextStyle(fontFamily: 'Poppins-Bold'),
+                            ),
+                            content: Container(
+                              child: Lottie.network(
+                                  'https://assets8.lottiefiles.com/packages/lf20_tpa51dr0.json'),
+                            ),
+                            actions: <Widget>[
+                              InkWell(
+                                onTap: () async {
+                                  final eskul =
+                                      'https://docs.google.com/forms/d/e/1FAIpQLSefU6c9nh4CDITbkHyTh-AUNhMJfKjopSD1iOH3GBblFFSL6g/viewform';
+                                  openBrowserURL(url: eskul, inApp: false);
+                                },
+                                child: Container(
+                                    width: 100,
+                                    height: 50,
+                                    color: Color.fromARGB(255, 0, 88, 252),
+                                    child: Center(
+                                      child: Text(
+                                        "Daftar Eskul",
+                                        style: TextStyle(
+                                            fontFamily: 'Robotto',
+                                            color: Colors.white),
+                                      ),
+                                    )),
+                              ),
+                              InkWell(
+                                onTap: () async {
+                                  final daftarsekolah =
+                                      'https://docs.google.com/forms/d/e/1FAIpQLSf2eyqxcdAlpFRlG6gnXvEeGWOJpudrdHz0cSDFinQb5qIh7g/viewform';
+                                  openBrowserURL(
+                                      url: daftarsekolah, inApp: false);
+                                },
+                                child: Container(
+                                    width: 100,
+                                    height: 50,
+                                    color: Color.fromARGB(255, 252, 0, 0),
+                                    child: Center(
+                                      child: Text(
+                                        "Daftar Sekolah",
+                                        style: TextStyle(
+                                            fontFamily: 'Robotto',
+                                            color: Colors.white),
+                                      ),
+                                    )),
+                              ),
+                            ],
+                          ),
+                        ),
                     child: Container(
                       margin: EdgeInsets.all(10),
                       width: 327,
@@ -205,3 +306,5 @@ class Settings extends StatelessWidget {
     );
   }
 }
+
+// halaman pop up sistem

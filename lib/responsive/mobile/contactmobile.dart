@@ -14,48 +14,52 @@ class Contactmobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
       // header halaman
-      Container(
+      FittedBox(
+          child: Container(
         padding: EdgeInsets.all(40),
         child: Row(
           children: [
-            FittedBox(
-                child: Column(
+            Column(
               children: [
+                FittedBox(
+                    child: Container(
+                  margin: EdgeInsets.only(right: 110),
+                  child: Text(
+                    "Hubungi",
+                    style: TextStyle(fontFamily: 'Poppins-Bold', fontSize: 40),
+                  ),
+                )),
                 Container(
-                    margin: EdgeInsets.only(right: 110),
-                    child: Text(
-                      "Hubungi",
-                      style:
-                          TextStyle(fontFamily: 'Poppins-Bold', fontSize: 40),
-                    )),
-                Container(
+                    child: FittedBox(
                   child: Text(
                     'Pembina Eskul',
                     style: TextStyle(fontFamily: 'Poppins-Bold', fontSize: 40),
                   ),
-                ),
+                )),
                 // text parargrap
-                Container(
-                    width: 250,
-                    padding: EdgeInsets.only(top: 20),
-                    child: Text(
-                      'Water is life. Water is a basic human need. In various lines of life, humans need water.',
-                      textAlign: TextAlign.justify,
-                      style: TextStyle(
-                          color: Color.fromRGBO(137, 137, 137, 1),
-                          fontFamily: 'Poppins',
-                          fontSize: 14,
-                          letterSpacing:
-                              0 /*percentages not used in flutter. defaulting to zero*/,
-                          fontWeight: FontWeight.normal,
-                          height: 1.5 /*PERCENT not supported*/
-                          ),
-                    ))
+                FittedBox(
+                  child: Container(
+                      width: 250,
+                      padding: EdgeInsets.only(top: 20),
+                      child: Text(
+                        'Untuk mengetahui lebih lanjut tentang eskul kami dan pendaftarannya',
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(
+                            color: Color.fromRGBO(137, 137, 137, 1),
+                            fontFamily: 'Poppins',
+                            fontSize: 14,
+                            letterSpacing:
+                                0 /*percentages not used in flutter. defaulting to zero*/,
+                            fontWeight: FontWeight.normal,
+                            height: 1.5 /*PERCENT not supported*/
+                            ),
+                      )),
+                )
               ],
-            ))
+            )
           ],
         ),
-      ),
+      )),
 
       // fungsi mengrimkan pesan ke pembina eskul
       Container(
