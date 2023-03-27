@@ -14,6 +14,7 @@ dependencies:
   simple_gradient_text: ^1.2.4
   animated_text_kit: ^4.1.0
   google_nav_bar: ^5.0.6
+  google_fonts: ^4.0.3
 
 dev_dependencies:
   flutter_test:
@@ -46,6 +47,7 @@ flutter:
     - assets/image/Wa.webp
     - assets/image/logo2.webp
     - assets/image/folder.webp
+    - assets/image/bg3.png
     - assets/image/image-medsos/tiktok.png
     - assets/image/image-medsos/instagram.png
     - assets/image/image-medsos/yotube.png
@@ -55,6 +57,9 @@ flutter:
       fonts:
         - asset: assets/font/Valken.ttf
     - family: MVS
+      fonts:
+        - asset: assets/font/Roboto-Medium.ttf
+    - family: Rmedium
       fonts:
         - asset: assets/font/MVS.ttf
     - family: Poppins-Bold

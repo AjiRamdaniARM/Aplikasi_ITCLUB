@@ -1,6 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 
-import 'package:app_it/animasi/animasicontact.dart';
 import 'package:app_it/responsive.dart';
 import 'package:app_it/responsive/mobile/homeresponsive.dart';
 import 'package:flutter/material.dart';

@@ -35,10 +35,17 @@ class _SplashScreenState extends State<SplashScreen>
     final maxLines = 1;
     return Scaffold(
       bottomNavigationBar: Container(
-          height: 50,
+          height: 100,
           alignment: Alignment.center,
-          child: Text(
-            "Developer By ARI",
+          child: Text.rich(
+            TextSpan(text: "CopyRight By ", children: <InlineSpan>[
+              TextSpan(
+                  text: 'ARI DEV',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Poppins-Bold',
+                      fontSize: 18))
+            ]),
             style: TextStyle(fontFamily: "Robotto", letterSpacing: 1),
           )),
       body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [

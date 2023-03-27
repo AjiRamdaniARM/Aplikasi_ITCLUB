@@ -1,6 +1,6 @@
 import 'package:app_it/Home.dart';
 import 'package:app_it/Profile.dart';
-import 'package:app_it/animasi/animasicontact.dart';
+
 import 'package:app_it/responsive.dart';
 import 'package:app_it/responsive/mobile/contactmobile.dart';
 import 'package:flutter/material.dart';

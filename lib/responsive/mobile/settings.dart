@@ -188,7 +188,7 @@ class Settings extends StatelessWidget {
                           Container(
                             width: 200,
                             child: Text(
-                              'Aplikasi ini berbasis Android !! Not Support IOS,DESKTOP , TABLET',
+                              'Aplikasi ini dalam tahap pengembangan, Tidak suppport untuk device IOS, TABLET dan DESKTOP !! ',
                               style: TextStyle(
                                   fontFamily: 'Robotto', letterSpacing: 0.5),
                             ),
