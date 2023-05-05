@@ -10,6 +10,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:app_it/Profile.dart';
 import 'package:app_it/Cloud.dart';
 import 'package:app_it/Contact.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:app_it/animasi/animasicloud.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
@@ -25,10 +26,45 @@ List<String> images = [
   "assets/image/bg2.png",
 ];
 
-class HomeResponsive extends StatelessWidget {
-  const HomeResponsive({
-    Key? key,
-  }) : super(key: key);
+class HomeResponsive extends StatefulWidget {
+  @override
+State<HomeResponsive> createState() => _HomeMobile();
+}
+class _HomeMobile extends State<HomeResponsive> {
+
+
+@override
+void initState(){
+  super.initState();
+  initBannerAd();
+}
+
+  late BannerAd bannerAd;
+  bool isAdLoaded = false;
+  var adUnit  = "ca-app-pub-6181485053408552/6426735910";
+
+  initBannerAd(){
+    bannerAd = BannerAd(
+      size: AdSize.banner,
+      adUnitId: adUnit,
+      listener: BannerAdListener(
+      onAdLoaded: (ad) {
+        setState(() {
+          isAdLoaded = true;
+        });
+      },
+      onAdFailedToLoad: ((ad, error) {
+        ad.dispose();
+        print('error');
+      })
+      ),
+      request: AdRequest(),
+    );
+    bannerAd.load();
+  }
+
+
+
   @override
   Widget build(BuildContext context) {
     Future openBrowserURL({
@@ -45,7 +81,10 @@ class HomeResponsive extends StatelessWidget {
       }
     }
 
-    return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+    return 
+    
+  
+    Column(mainAxisAlignment: MainAxisAlignment.center, children: [
       Container(
           margin: EdgeInsets.only(left: 20, top: 30),
           width: MediaQuery.of(context).size.width,
@@ -441,6 +480,7 @@ class HomeResponsive extends StatelessWidget {
               )),
             ),
           ])),
+          
     ]);
   }
 }

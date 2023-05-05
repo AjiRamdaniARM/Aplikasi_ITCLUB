@@ -4,6 +4,7 @@ import 'package:app_it/responsive.dart';
 import 'package:app_it/responsive/mobile/homeresponsive.dart';
 import 'package:flutter/material.dart';
 import 'package:app_it/splash_screen.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -25,6 +26,37 @@ class Home extends StatefulWidget {
 }
 
 class _Home extends State<Home> {
+
+@override
+void initState(){
+  super.initState();
+  initBannerAd();
+}
+
+  late BannerAd bannerAd;
+  bool isAdLoaded = false;
+  var adUnit  = "ca-app-pub-6181485053408552/6426735910";
+
+  initBannerAd(){
+    bannerAd = BannerAd(
+      size: AdSize.banner,
+      adUnitId: adUnit,
+      listener: BannerAdListener(
+      onAdLoaded: (ad) {
+        setState(() {
+          isAdLoaded = true;
+        });
+      },
+      onAdFailedToLoad: ((ad, error) {
+        ad.dispose();
+        print('error');
+      })
+      ),
+      request: AdRequest(),
+    );
+    bannerAd.load();
+  }
+
   @override
   Widget build(BuildContext context) {
     Future openBrowserURL({
@@ -478,6 +510,14 @@ class _Home extends State<Home> {
             ])),
         mobile: HomeResponsive(),
       ),
-    )));
+    )),
+    bottomNavigationBar: isAdLoaded ? SizedBox(
+      height: bannerAd.size.height.toDouble(),
+      width: bannerAd.size.width.toDouble(),
+      child: AdWidget(ad: bannerAd),
+     
+    )
+    : const SizedBox(),
+    );
   }
 }
