@@ -1,6 +1,6 @@
 import 'package:app_it/Home.dart';
 import 'package:app_it/Profile.dart';
-
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:app_it/responsive.dart';
 import 'package:app_it/responsive/mobile/contactmobile.dart';
 import 'package:flutter/material.dart';
@@ -22,8 +22,42 @@ final Uri dhira = Uri.parse('https://wa.link/mc7bm0');
 final Uri andhika = Uri.parse('https://wa.link/xvkfyf');
 final Uri hafidz = Uri.parse("https://wa.link/hnsuof");
 
-class Contact extends StatelessWidget {
-  //constructor
+class Contact extends StatefulWidget {
+  @override
+  State<Contact> createState() => _Contact();
+}
+class _Contact extends State<Contact> {
+  
+@override
+void initState(){
+  super.initState();
+  initBannerAd();
+}
+
+  late BannerAd bannerAd;
+  bool isAdLoaded = false;
+  var adUnit  = "ca-app-pub-6181485053408552/6426735910";
+
+  initBannerAd(){
+    bannerAd = BannerAd(
+      size: AdSize.banner,
+      adUnitId: adUnit,
+      listener: BannerAdListener(
+      onAdLoaded: (ad) {
+        setState(() {
+          isAdLoaded = true;
+        });
+      },
+      onAdFailedToLoad: ((ad, error) {
+        ad.dispose();
+        print('error');
+      })
+      ),
+      request: AdRequest(),
+    );
+    bannerAd.load();
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -42,12 +76,20 @@ class Contact extends StatelessWidget {
     }
 
     return Scaffold(
+      bottomNavigationBar:   isAdLoaded ? SizedBox(
+      height: bannerAd.size.height.toDouble(),
+      width: bannerAd.size.width.toDouble(),
+      child: AdWidget(ad: bannerAd),
+     
+    )
+    : const SizedBox(),
       body: SingleChildScrollView(
           child: SafeArea(
         child: Responsive(
           tablet: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+            
               Container(
                 margin: EdgeInsets.all(10),
                 width: MediaQuery.of(context).size.width,
@@ -233,7 +275,7 @@ class Contact extends StatelessWidget {
               )
             ],
           ),
-          mobile: Contactmobile(key: key),
+          mobile: Contactmobile(),
         ),
       )),
     );

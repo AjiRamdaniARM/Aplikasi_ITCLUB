@@ -43,6 +43,7 @@ class _Navbar extends State<Navbar> {
             BottomNavigationBarItem(
                 icon: Icon(Icons.settings), label: 'Settings'),
           ]),
+          
     );
   }
 }

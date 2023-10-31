@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "620933646315",
+    "firebase_url": "https://bigdata-aplikasiitc-default-rtdb.firebaseio.com",
+    "project_id": "bigdata-aplikasiitc",
+    "storage_bucket": "bigdata-aplikasiitc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:620933646315:android:52b77d974ec0d4548cfbae",
+        "android_client_info": {
+          "package_name": "com.itclovers.aplikasi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "620933646315-f8a0tan11etbuoud856avg05btffp4gv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRmpncHMRhUzLzd4vytV4YHYxwOOgB3Ps"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "620933646315-0kkuv9pe9u3fvs2idfjomcisg71hccqg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "620933646315-oii08603190ci4btnf9pf78776pda5qk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.appIt"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

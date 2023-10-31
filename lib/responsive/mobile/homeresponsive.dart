@@ -4,7 +4,6 @@ import 'package:app_it/responsive/mobile/cloudmobile.dart';
 import 'package:app_it/responsive/mobile/homeresponsive.dart';
 import 'package:flutter/material.dart';
 import 'package:app_it/splash_screen.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:app_it/Profile.dart';
@@ -55,7 +54,7 @@ void initState(){
       },
       onAdFailedToLoad: ((ad, error) {
         ad.dispose();
-        print('error');
+        print('Gagal menjalankan');
       })
       ),
       request: AdRequest(),
@@ -132,7 +131,7 @@ void initState(){
                             animatedTexts: [
                               FadeAnimatedText(
                                 'SMKS TERPADU IBAADURRAHMAN',
-                                textStyle: GoogleFonts.roboto(),
+                              
                               ),
                               FadeAnimatedText(
                                 'SMKS PARAWISATA PERCIK MADANI',

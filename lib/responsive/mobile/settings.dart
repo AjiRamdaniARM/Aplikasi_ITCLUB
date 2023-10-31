@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:lottie/lottie.dart';
+// import 'package:firebase_core/firebase_core.dart';
+// import 'firebase_options.dart';
 
 class Settings extends StatelessWidget {
   const Settings({
@@ -238,7 +240,7 @@ class Settings extends StatelessWidget {
                               InkWell(
                                 onTap: () async {
                                   final eskul =
-                                      'https://docs.google.com/forms/d/e/1FAIpQLSefU6c9nh4CDITbkHyTh-AUNhMJfKjopSD1iOH3GBblFFSL6g/viewform';
+                                      'https://docs.google.com/forms/d/e/1FAIpQLSfkDkDzorwJe6xKXnr6LgNIcoDiQMPJKurPD3iR95Jowpf_eQ/viewform?usp=sf_link';
                                   openBrowserURL(url: eskul, inApp: false);
                                 },
                                 child: Container(
